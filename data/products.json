@@ -1,0 +1,266 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-01-15",
+    "version": "1.0",
+    "brand": "MAGIC TOOLS",
+    "compatibleModels": ["TM6", "TM7"]
+  },
+  "products": [
+    {
+      "id": "tm-holder",
+      "name": "TM-Holder",
+      "shortName": "Holder",
+      "category": "organizacion",
+      "priceUSD": 1.26,
+      "discount": 0,
+      "priceLabel": "Consultar",
+      "badge": "MÁS VENDIDO",
+      "shortDesc": "Todo en su lugar. Mantén la tapa, la espátula y la mariposa de tu TM6 o TM7 siempre al alcance.",
+      "fullDesc": "El TM-Holder es el organizador perfecto para tus accesorios de Thermomix más utilizados...",
+      "features": [
+        "Diseño compacto y minimalista que se integra en cualquier cocina",
+        "Compatible 100% con TM6 y TM7",
+        "Instalación sin dañar azulejos (opción adhesiva 3M incluida)",
+        "Ventilación integrada para secado natural de accesorios",
+        "Soporta peso hasta 2kg distribuidos",
+        "Fácil limpieza con paño húmedo"
+      ],
+      "specs": {
+        "material": "PETG Premium (opcional ABS)",
+        "dimensions": "25 x 12 x 8 cm",
+        "weight": "17g",
+        "capacity": "3 accesorios simultáneos",
+        "installation": "Tornillos o adhesivo industrial",
+        "warranty": "90 días"
+      },
+      "images": {
+        "main": "imgs/productos/tm-holder-1.jpg",
+        "gallery": [
+          "imgs/productos/tm-holder-1.jpg",
+          "imgs/productos/tm-holder-2.jpg"
+        ]
+      },
+      "colors": [
+        { "name": "Negro", "hex": "#000000", "class": "bg-black" },
+        { "name": "Blanco", "hex": "#FFFFFF", "class": "bg-white" },
+        { "name": "Dorado", "hex": "#F5B800", "class": "bg-[#F5B800]" },
+        { "name": "Gris", "hex": "#9CA3AF", "class": "bg-gray-400" }
+      ],
+      "care": [
+        "Lavar con agua tibia y jabón suave",
+        "Apto para lavavajillas (programa suave, top rack)",
+        "No exponer a temperaturas superiores a 75°C",
+        "Evitar rayos directos del sol prolongados para mantener el color"
+      ],
+      "related": ["tm-caddy-base", "tm-wisker-top"],
+      "seo": {
+        "title": "TM-Holder - Organizador de accesorios Thermomix | MAGIC TOOLS",
+        "description": "Organizador de pared para tapa, espátula y mariposa de Thermomix TM6/TM7. Diseño minimalista impreso en 3D."
+      }
+    },
+    {
+      "id": "tm-caddy-base",
+      "name": "TM-Caddy Base",
+      "shortName": "Caddy Base",
+      "category": "organizacion",
+      "priceUSD": 10.79,
+      "discount": 0,
+      "priceLabel": "Consultar",
+      "badge": null,
+      "shortDesc": "Soporte integral de mesada que mantiene todos tus periféricos esenciales a mano y protegidos del desgaste.",
+      "fullDesc": "La TM-Caddy Base es la estación de carga definitiva para tu Thermomix...",
+      "features": [
+        "Base antideslizante de silicona integrada",
+        "Compartimentos específicos para cada accesorio",
+        "Protege la mesada de rayaduras y manchas",
+        "Diseño ergonómico de fácil limpieza (sin esquinas)",
+        "Material resistente a impactos y caídas",
+        "Permite secado organizado después del lavado"
+      ],
+      "specs": {
+        "material": "PETG Premium (opcional ABS)",
+        "dimensions": "30 x 30 x 5 cm",
+        "weight": "218g",
+        "capacity": "Base completa + 4 accesorios",
+        "installation": "No requiere instalación",
+        "warranty": "30 días"
+      },
+      "images": {
+        "main": "imgs/productos/tm-caddy-1.jpg",
+        "gallery": [
+          "imgs/productos/tm-caddy-1.jpg",
+          "imgs/productos/tm-caddy-2.jpg"
+        ]
+      },
+      "colors": [
+        { "name": "Blanco", "hex": "#FFFFFF", "class": "bg-white" },
+        { "name": "Negro", "hex": "#000000", "class": "bg-black" },
+        { "name": "Dorado", "hex": "#F5B800", "class": "bg-[#F5B800]" }
+      ],
+      "care": [
+        "Lavar con agua y jabón neutro",
+        "Secar bien antes de usar para evitar manchas de agua",
+        "No usar estropajos metálicos que rayen la superficie",
+        "Evitar dejar sumergido en agua por períodos prolongados"
+      ],
+      "related": ["tm-holder", "tm-soporte-varoma"],
+      "seo": {
+        "title": "TM-Caddy Base - Soporte de mesada Thermomix | MAGIC TOOLS",
+        "description": "Base organizadora para mesada de Thermomix. Protege tus accesorios y mesada con estilo."
+      }
+    },
+    {
+      "id": "tm-soporte-varoma",
+      "name": "TM-Soporte Varoma",
+      "shortName": "Soporte Varoma",
+      "category": "almacenamiento",
+      "priceUSD": 3.76,
+      "discount": 0,
+      "priceLabel": "Consultar",
+      "badge": null,
+      "shortDesc": "Libera tu mesada. Soporte de pared para Varoma Thermomix con instalación fácil y segura.",
+      "fullDesc": "Libera espacio valioso en tu mesada con el soporte de pared para Varoma...",
+      "features": [
+        "Ahorro total de espacio en mesada (hasta 40cm de diámetro)",
+        "Soporta el peso completo del Varoma (1.5kg)",
+        "Instalación con tornillos incluidos o adhesivo industrial opcional",
+        "Diseño que permite ventilación y secado completo",
+        "Compatible con todos los modelos de Varoma TM6/TM7",
+        "Brazos ajustables para diferentes configuraciones"
+      ],
+      "specs": {
+        "material": "ABS de alta resistencia (recomendado) o PETG",
+        "dimensions": "32 x 15 x 12 cm",
+        "weight": "150g",
+        "capacity": "Varoma completo (base + recipiente + tapa)",
+        "installation": "Tornillos y tacos incluidos",
+        "warranty": "90 días"
+      },
+      "images": {
+        "main": "imgs/productos/tm-varoma-1.jpg",
+        "gallery": [
+          "imgs/productos/tm-varoma-1.jpg",
+          "imgs/productos/tm-varoma-2.jpg"
+        ]
+      },
+      "colors": [
+        { "name": "Blanco", "hex": "#FFFFFF", "class": "bg-white" },
+        { "name": "Gris", "hex": "#9CA3AF", "class": "bg-gray-400" },
+        { "name": "Negro", "hex": "#000000", "class": "bg-black" }
+      ],
+      "care": [
+        "Limpiar con paño húmedo periódicamente",
+        "Verificar tornillos cada 3 meses",
+        "No sobrecargar más allá del peso indicado",
+        "Secar bien el Varoma antes de colocar en el soporte"
+      ],
+      "related": ["tm-caddy-base", "tm-holder"],
+      "seo": {
+        "title": "Soporte Varoma - Guarda tu Varoma en la pared | MAGIC TOOLS",
+        "description": "Soporte de pared para Varoma Thermomix. Libera espacio en tu cocina con seguridad."
+      }
+    },
+    {
+      "id": "tm-wisker-top",
+      "name": "TM-Wisker Top",
+      "shortName": "Wisker Top",
+      "category": "almacenamiento",
+      "priceUSD": 0.43,
+      "discount": 0,
+      "priceLabel": "Consultar",
+      "badge": "NUEVO",
+      "shortDesc": "Mantén la mariposa siempre a mano pero fuera de la vista. Compatible con TM6/TM7.",
+      "fullDesc": "Solución elegante para almacenar la mariposa de tu Thermomix...",
+      "features": [
+        "Instalación oculta bajo muebles (no se ve)",
+        "Acceso rápido y ergonómico con una mano",
+        "Evita que la mariposa se pierda o dañe en cajones",
+        "Diseño minimalista que no interfiere con la estética de la cocina",
+        "Compatible con mariposa original de TM6 y TM7",
+        "Opción magnética disponible (imanes neodimio)"
+      ],
+      "specs": {
+        "material": "PETG Premium",
+        "dimensions": "8 x 6 x 4 cm",
+        "weight": "7g",
+        "capacity": "1 mariposa",
+        "installation": "Tornillos o adhesivo doble cara",
+        "warranty": "30 días"
+      },
+      "images": {
+        "main": "imgs/productos/wisker-1.jpg",
+        "gallery": [
+          "imgs/productos/tm-wisker-1.jpg",
+          "imgs/productos/tm-wisker-2.jpg"
+        ]
+      },
+      "colors": [
+        { "name": "Negro", "hex": "#000000", "class": "bg-black" },
+        { "name": "Blanco", "hex": "#FFFFFF", "class": "bg-white" },
+        { "name": "Amarillo", "hex": "#F5B800", "class": "bg-[#F5B800]" }
+      ],
+      "care": [
+        "Limpiar con paño seco o ligeramente húmedo",
+        "No usar productos abrasivos",
+        "Verificar adhesivo cada 6 meses",
+        "Evitar golpes que puedan deformar la forma de sujeción"
+      ],
+      "related": ["tm-holder", "tm-key"],
+      "seo": {
+        "title": "TM-Wisker Top - Guarda la mariposa bajo mueble | MAGIC TOOLS",
+        "description": "Soporte oculto para mariposa Thermomix. Máxima organización sin perder estética."
+      }
+    },
+    {
+      "id": "tm-key",
+      "name": "TM-Key",
+      "shortName": "Key",
+      "category": "utensilios",
+      "priceUSD": 0.95,
+      "discount": 0,
+      "priceLabel": "Consultar",
+      "badge": null,
+      "shortDesc": "Extrae la masa del vaso de forma eficiente y sencilla. Compatible con TM6/TM7.",
+      "fullDesc": "La TM-Key es la herramienta perfecta para extraer masas pegajosas del vaso de la Thermomix...",
+      "features": [
+        "Diseño ergonómico antideslizante para mejor agarre",
+        "Material flexible que no raya el vaso de acero inoxidable",
+        "Fácil de limpiar (apta lavavajillas, top rack)",
+        "Material resistente a temperaturas hasta 75°C",
+        "Orificio para colgar y tener siempre a mano",
+        "Borde flexible para adaptarse a curvas del vaso"
+      ],
+      "specs": {
+        "material": "PETG Premium (flexible)",
+        "dimensions": "12 x 4 x 2 cm",
+        "weight": "17.5g",
+        "capacity": "Uso único",
+        "installation": "No requiere instalación",
+        "warranty": "30 días"
+      },
+      "images": {
+        "main": "imgs/productos/key-1.jpg",
+        "gallery": [
+          "imgs/productos/tm-key-1.jpg",
+          "imgs/productos/tm-key-2.jpg"
+        ]
+      },
+      "colors": [
+        { "name": "Blanco", "hex": "#FFFFFF", "class": "bg-white" },
+        { "name": "Natural", "hex": "#F3F4F6", "class": "bg-gray-100" },
+        { "name": "Amarillo", "hex": "#F5B800", "class": "bg-[#F5B800]" }
+      ],
+      "care": [
+        "Lavar antes del primer uso",
+        "Apto para lavavajillas (colocar en bandeja superior)",
+        "No usar sobre superficies calientes (sartenes, horno)",
+        "Reemplazar si se observan grietas o deformaciones"
+      ],
+      "related": ["tm-holder", "tm-caddy-base"],
+      "seo": {
+        "title": "TM-Key - Espátula para Thermomix | MAGIC TOOLS",
+        "description": "Herramienta para extraer masas del vaso Thermomix. Flexible y segura para acero inoxidable."
+      }
+    }
+  ]
+}
