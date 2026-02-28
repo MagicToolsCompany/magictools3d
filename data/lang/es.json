@@ -1,0 +1,262 @@
+{
+  "meta": {
+    "language": "es",
+    "languageName": "Español",
+    "flag": "ES",
+    "direction": "ltr"
+  },
+  "nav": {
+    "products": "Productos",
+    "cookieCutters": "Cookie Cutters",
+    "howToBuy": "Comprar",
+    "customization": "Personalización",
+    "materials": "Materiales",
+    "contact": "Contacto",
+    "order": "Pedir",
+    "consult": "Consultar"
+  },
+  "hero": {
+    "badge": "Impresión 3D de alta precisión",
+    "title": "Diseño funcional<br>para tu cocina",
+    "description": "Accesorios inteligentes para Thermomix impresos en 3D. Organiza tus utensilios, optimiza tu espacio y personaliza cada detalle con tu color favorito.",
+    "viewCatalog": "Ver catálogo",
+    "whatsapp": "WhatsApp"
+  },
+  "features": {
+    "customizableColors": {
+      "title": "Colores Personalizables",
+      "desc": "Amplia gama cromática disponible. Amarillo, negro, blanco y más. Elige el que combine con tu cocina."
+    },
+    "premiumMaterials": {
+      "title": "Materiales Premium",
+      "desc": "Fabricados exclusivamente en PETG y ABS de alta calidad para una larga vida útil y fácil limpieza."
+    },
+    "customDesign": {
+      "title": "Diseño a Medida",
+      "desc": "¿Tienes una idea especial? Transformamos tu concepto en una herramienta real y personalizada."
+    }
+  },
+  "products": {
+    "title": "Catálogo de Productos",
+    "subtitle": "Soluciones inteligentes para organizar y optimizar tu Thermomix",
+    "bestseller": "MÁS VENDIDO",
+    "new": "NUEVO",
+    "viewDetails": "Ver detalles",
+    "viewCatalog": "Ver catálogo",
+    "colorsAvailable": "+20 colores",
+    "cookieCuttersDesc": "Más de 50 diseños de cortadores de galletas personalizados. Animales, formas, festividades y más."
+  },
+  "howToBuy": {
+    "title": "¿Cómo comprar?",
+    "subtitle": "Simple, rápido y personalizado",
+    "steps": {
+      "1": { "title": "Elige producto", "desc": "Selecciona el accesorio que necesitas de nuestro catálogo" },
+      "2": { "title": "Personaliza", "desc": "Escoge el color (amarillo, negro, blanco, etc.)" },
+      "3": { "title": "Contacta", "desc": "Escríbenos por WhatsApp o Instagram" },
+      "4": { "title": "Recibe", "desc": "Te lo enviamos o coordinamos retiro" }
+    },
+    "cta": "Escribir por WhatsApp",
+    "responseTime": "Respuesta en menos de 24hs"
+  },
+  "customization": {
+    "badge": "Proyectos Especiales",
+    "title": "¿Tienes una idea?",
+    "description": "Somos especialistas en diseño 3D. Transformamos tu concepto en una herramienta real, funcional y completamente personalizada para tus necesidades específicas.",
+    "features": [
+      "Diseño personalizado desde cero según tus especificaciones",
+      "Elección de colores corporativos o preferidos",
+      "Prototipado rápido y ajustes sin costo adicional"
+    ],
+    "cta": "Consultar proyecto"
+  },
+  "materials": {
+    "title": "Materiales de Alta Calidad",
+    "subtitle": "Durabilidad y seguridad garantizadas en cada impresión",
+    "petg": {
+      "title": "PETG Premium",
+      "desc": "Ideal para uso alimentario y contacto con la cocina. Resistente a impactos, fácil de limpiar y duradero.",
+      "features": [
+        "Resistente a temperaturas hasta 75°C",
+        "Apto para lavavajillas",
+        "No tóxico y seguro para alimentos"
+      ]
+    },
+    "abs": {
+      "title": "ABS de Alta Resistencia",
+      "desc": "Máxima durabilidad para soportes y estructuras. Acabado profesional y rigidez superior.",
+      "features": [
+        "Alta resistencia mecánica",
+        "Acabado suave al tacto (vapor smoothing)",
+        "Ideal para soportes de pared"
+      ]
+    }
+  },
+  "contact": {
+    "title": "¿Listo para tu pedido?",
+    "description": "Contáctanos directamente por WhatsApp para una atención personalizada y rápida.",
+    "form": {
+      "title": "Envíanos un mensaje",
+      "name": "Nombre",
+      "email": "Email",
+      "product": "Producto",
+      "color": "Color preferido",
+      "message": "Mensaje",
+      "placeholder": {
+        "name": "Tu nombre",
+        "email": "tu@email.com",
+        "color": "Ej: Amarillo, Negro...",
+        "message": "¿Algún detalle especial?"
+      },
+      "selectProduct": "Selecciona...",
+      "submit": "Enviar consulta",
+      "success": {
+        "title": "¡Mensaje enviado!",
+        "desc": "Te contactaremos pronto."
+      }
+    },
+    "whatsapp": {
+      "label": "WhatsApp",
+      "number": "+54 9 11 5118-1404",
+      "response": "Respuesta inmediata"
+    },
+    "instagram": {
+      "label": "Instagram",
+      "handle": "@magic.tools.3d",
+      "follow": "Síguenos para novedades"
+    },
+    "email": {
+      "label": "Email",
+      "address": "magictoolscompany@gmail.com",
+      "desc": "Para consultas generales"
+    }
+  },
+  "footer": {
+    "brand": "MAGIC TOOLS",
+    "slogan": "Diseño funcional para tu cocina",
+    "description": "Accesorios inteligentes para Thermomix impresos en 3D. Organiza tu cocina con estilo.",
+    "products": "Productos",
+    "contact": "Contacto",
+    "copyright": "© 2026 Magic Tools. Todos los derechos reservados."
+  },
+  "cookieCutters": {
+    "title": "Cookie Cutters 3D",
+    "collection": "Colección 2026",
+    "subtitle": "Cortadores de galletas impresos en 3D con materiales aptos para alimentos. Diseños exclusivos para cada ocasión.",
+    "searchPlaceholder": "Buscar diseño...",
+    "sort": {
+      "name": "Ordenar: Nombre",
+      "popular": "Más populares",
+      "new": "Nuevos",
+      "priceAsc": "Precio: Menor a mayor",
+      "priceDesc": "Precio: Mayor a menor"
+    },
+    "available": "diseños disponibles",
+    "loading": "Cargando productos...",
+    "errorLoading": "Error cargando productos. Recarga la página.",
+    "downloadCatalog": "Descargar catálogo",
+    "noResults": {
+      "title": "No encontramos resultados",
+      "desc": "Intenta con otra búsqueda o categoría"
+    },
+    "bulkOrder": {
+      "title": "¿Necesitas cantidad?",
+      "desc": "Ofrecemos descuentos especiales para pedidos por mayor. Ideal para reposterías, eventos o regalos corporativos.",
+      "cta": "Consultar por mayor",
+      "viewData": "Ver datos (JSON)"
+    },
+    "order": "Pedir",
+    "getDiscount": "Aprovechar descuento",
+    "sizes": "Tamaños",
+    "dolarRate": "Dólar Blue",
+    "updated": "Actualizado",
+    "loadingRate": "Cargando cotización...",
+    "errorRate": "Error cargando cotización"
+  },
+  "productDetail": {
+    "loading": "Cargando producto...",
+    "loadingDolar": "Consultando cotización...",
+    "notFound": {
+      "title": "Producto no encontrado",
+      "desc": "El producto que buscas no existe o fue removido.",
+      "back": "Volver al inicio"
+    },
+    "badge": {
+      "bestseller": "MÁS VENDIDO",
+      "new": "NUEVO"
+    },
+    "tabs": {
+      "description": "Descripción",
+      "specs": "Especificaciones",
+      "care": "Cuidados"
+    },
+    "price": {
+      "exchangeRate": "Cotización: ${rate} por USD",
+      "noPrice": "Consultar precio",
+      "noPriceDesc": "Contactanos para cotización actualizada",
+      "youSave": "Ahorrás",
+      "limitedOffer": "¡Oferta limitada!"
+    },
+    "features": {
+      "material": "Material",
+      "time": "Tiempo",
+      "shipping": "Envío",
+      "warranty": "Garantía",
+      "timeValue": "24-48 hs",
+      "shippingValue": "A todo el país"
+    },
+    "colorSelector": "Color",
+    "selectColor": "(selecciona uno)",
+    "selectedColor": "(seleccionado: {color})",
+    "cta": "Consultar por WhatsApp",
+    "response": "Respuesta en menos de 24 horas",
+    "related": "También te puede interesar"
+  },
+  "currencies": {
+    "USD": "USD",
+    "ARS": "ARS"
+  },
+  "categories": {
+    "all": "Todos",
+    "animales": "Animales",
+    "formas": "Formas",
+    "festividades": "Festividades",
+    "letras": "Letras",
+    "numeros": "Números",
+    "personajes": "Personajes",
+    "cookies": "Cookies"
+  },
+  "common": {
+    "popular": "POPULAR",
+    "new": "NUEVO",
+    "discount": "descuento",
+    "save": "Ahorrás",
+    "from": "desde",
+    "to": "hasta",
+    "or": "o",
+    "and": "y",
+    "close": "Cerrar",
+    "open": "Abrir",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "apply": "Aplicar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "back": "Volver",
+    "continue": "Continuar",
+    "confirm": "Confirmar",
+    "success": "Éxito",
+    "error": "Error",
+    "warning": "Advertencia",
+    "info": "Información",
+    "loading": "Cargando...",
+    "processing": "Procesando...",
+    "sent": "Enviado",
+    "received": "Recibido",
+    "pending": "Pendiente",
+    "completed": "Completado",
+    "cancelled": "Cancelado"
+  }
+}

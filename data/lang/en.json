@@ -1,0 +1,262 @@
+{
+  "meta": {
+    "language": "en",
+    "languageName": "English",
+    "flag": "GB",
+    "direction": "ltr"
+  },
+  "nav": {
+    "products": "Products",
+    "cookieCutters": "Cookie Cutters",
+    "howToBuy": "How to Buy",
+    "customization": "Customization",
+    "materials": "Materials",
+    "contact": "Contact",
+    "order": "Order",
+    "consult": "Inquire"
+  },
+  "hero": {
+    "badge": "High precision 3D printing",
+    "title": "Functional design<br>for your kitchen",
+    "description": "Smart accessories for Thermomix 3D printed. Organize your utensils, optimize your space and customize every detail with your favorite color.",
+    "viewCatalog": "View catalog",
+    "whatsapp": "WhatsApp"
+  },
+  "features": {
+    "customizableColors": {
+      "title": "Customizable Colors",
+      "desc": "Wide color range available. Yellow, black, white and more. Choose the one that matches your kitchen."
+    },
+    "premiumMaterials": {
+      "title": "Premium Materials",
+      "desc": "Made exclusively with high-quality PETG and ABS for long durability and easy cleaning."
+    },
+    "customDesign": {
+      "title": "Custom Design",
+      "desc": "Do you have a special idea? We transform your concept into a real and personalized tool."
+    }
+  },
+  "products": {
+    "title": "Product Catalog",
+    "subtitle": "Smart solutions to organize and optimize your Thermomix",
+    "bestseller": "BESTSELLER",
+    "new": "NEW",
+    "viewDetails": "View details",
+    "viewCatalog": "View catalog",
+    "colorsAvailable": "+20 colors",
+    "cookieCuttersDesc": "Over 50 custom cookie cutter designs. Animals, shapes, holidays and more."
+  },
+  "howToBuy": {
+    "title": "How to buy?",
+    "subtitle": "Simple, fast and personalized",
+    "steps": {
+      "1": { "title": "Choose product", "desc": "Select the accessory you need from our catalog" },
+      "2": { "title": "Customize", "desc": "Choose the color (yellow, black, white, etc.)" },
+      "3": { "title": "Contact us", "desc": "Write us via WhatsApp or Instagram" },
+      "4": { "title": "Receive", "desc": "We ship it or arrange pickup" }
+    },
+    "cta": "Write on WhatsApp",
+    "responseTime": "Response in less than 24hs"
+  },
+  "customization": {
+    "badge": "Special Projects",
+    "title": "Do you have an idea?",
+    "description": "We are 3D design specialists. We transform your concept into a real, functional and fully customized tool for your specific needs.",
+    "features": [
+      "Custom design from scratch according to your specifications",
+      "Choice of corporate or preferred colors",
+      "Rapid prototyping and adjustments at no additional cost"
+    ],
+    "cta": "Inquire about project"
+  },
+  "materials": {
+    "title": "High Quality Materials",
+    "subtitle": "Durability and safety guaranteed in every print",
+    "petg": {
+      "title": "Premium PETG",
+      "desc": "Ideal for food use and kitchen contact. Impact resistant, easy to clean and durable.",
+      "features": [
+        "Resistant to temperatures up to 75°C",
+        "Dishwasher safe",
+        "Non-toxic and food safe"
+      ]
+    },
+    "abs": {
+      "title": "High Strength ABS",
+      "desc": "Maximum durability for supports and structures. Professional finish and superior rigidity.",
+      "features": [
+        "High mechanical resistance",
+        "Smooth finish to the touch (vapor smoothing)",
+        "Ideal for wall supports"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Ready for your order?",
+    "description": "Contact us directly via WhatsApp for personalized and fast service.",
+    "form": {
+      "title": "Send us a message",
+      "name": "Name",
+      "email": "Email",
+      "product": "Product",
+      "color": "Preferred color",
+      "message": "Message",
+      "placeholder": {
+        "name": "Your name",
+        "email": "your@email.com",
+        "color": "Ex: Yellow, Black...",
+        "message": "Any special details?"
+      },
+      "selectProduct": "Select...",
+      "submit": "Send inquiry",
+      "success": {
+        "title": "Message sent!",
+        "desc": "We will contact you soon."
+      }
+    },
+    "whatsapp": {
+      "label": "WhatsApp",
+      "number": "+54 9 11 5118-1404",
+      "response": "Immediate response"
+    },
+    "instagram": {
+      "label": "Instagram",
+      "handle": "@magic.tools.3d",
+      "follow": "Follow us for news"
+    },
+    "email": {
+      "label": "Email",
+      "address": "magictoolscompany@gmail.com",
+      "desc": "For general inquiries"
+    }
+  },
+  "footer": {
+    "brand": "MAGIC TOOLS",
+    "slogan": "Functional design for your kitchen",
+    "description": "Smart accessories for Thermomix 3D printed. Organize your kitchen with style.",
+    "products": "Products",
+    "contact": "Contact",
+    "copyright": "© 2026 Magic Tools. All rights reserved."
+  },
+  "cookieCutters": {
+    "title": "3D Cookie Cutters",
+    "collection": "2026 Collection",
+    "subtitle": "3D printed cookie cutters made with food-safe materials. Exclusive designs for every occasion.",
+    "searchPlaceholder": "Search designs...",
+    "sort": {
+      "name": "Sort: Name",
+      "popular": "Most popular",
+      "new": "Newest",
+      "priceAsc": "Price: Low to high",
+      "priceDesc": "Price: High to low"
+    },
+    "available": "designs available",
+    "loading": "Loading products...",
+    "errorLoading": "Error loading products. Please reload the page.",
+    "downloadCatalog": "Download catalog",
+    "noResults": {
+      "title": "No results found",
+      "desc": "Try another search or category"
+    },
+    "bulkOrder": {
+      "title": "Need quantity?",
+      "desc": "We offer special discounts for bulk orders. Ideal for bakeries, events or corporate gifts.",
+      "cta": "Inquire wholesale",
+      "viewData": "View data (JSON)"
+    },
+    "order": "Order",
+    "getDiscount": "Get discount",
+    "sizes": "Sizes",
+    "dolarRate": "Blue Dollar",
+    "updated": "Updated",
+    "loadingRate": "Loading exchange rate...",
+    "errorRate": "Error loading exchange rate"
+  },
+  "productDetail": {
+    "loading": "Loading product...",
+    "loadingDolar": "Checking exchange rate...",
+    "notFound": {
+      "title": "Product not found",
+      "desc": "The product you are looking for does not exist or has been removed.",
+      "back": "Back to home"
+    },
+    "badge": {
+      "bestseller": "BESTSELLER",
+      "new": "NEW"
+    },
+    "tabs": {
+      "description": "Description",
+      "specs": "Specifications",
+      "care": "Care"
+    },
+    "price": {
+      "exchangeRate": "Exchange rate: ${rate} per USD",
+      "noPrice": "Inquire price",
+      "noPriceDesc": "Contact us for updated pricing",
+      "youSave": "You save",
+      "limitedOffer": "Limited offer!"
+    },
+    "features": {
+      "material": "Material",
+      "time": "Time",
+      "shipping": "Shipping",
+      "warranty": "Warranty",
+      "timeValue": "24-48 hs",
+      "shippingValue": "Nationwide"
+    },
+    "colorSelector": "Color",
+    "selectColor": "(select one)",
+    "selectedColor": "(selected: {color})",
+    "cta": "Inquire via WhatsApp",
+    "response": "Response in less than 24 hours",
+    "related": "You may also like"
+  },
+  "currencies": {
+    "USD": "USD",
+    "ARS": "ARS"
+  },
+  "categories": {
+    "all": "All",
+    "animales": "Animals",
+    "formas": "Shapes",
+    "festividades": "Holidays",
+    "letras": "Letters",
+    "numeros": "Numbers",
+    "personajes": "Characters",
+    "cookies": "Cookies"
+  },
+  "common": {
+    "popular": "POPULAR",
+    "new": "NEW",
+    "discount": "discount",
+    "save": "You save",
+    "from": "from",
+    "to": "to",
+    "or": "or",
+    "and": "and",
+    "close": "Close",
+    "open": "Open",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "apply": "Apply",
+    "cancel": "Cancel",
+    "save": "Save",
+    "next": "Next",
+    "previous": "Previous",
+    "back": "Back",
+    "continue": "Continue",
+    "confirm": "Confirm",
+    "success": "Success",
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Information",
+    "loading": "Loading...",
+    "processing": "Processing...",
+    "sent": "Sent",
+    "received": "Received",
+    "pending": "Pending",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  }
+}
