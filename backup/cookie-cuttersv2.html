@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Cutters 3D | MAGIC TOOLS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fafafa; }
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+        .brand-yellow { color: #F5B800; }
+        .bg-brand-yellow { background-color: #F5B800; }
+        .bg-brand-black { background-color: #1a1a1a; }
+        .nav-blur { backdrop-filter: blur(12px); background-color: rgba(255, 255, 255, 0.9); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1); }
+        .category-pill.active { background-color: #F5B800; color: black; border-color: #F5B800; }
+        .search-input:focus { outline: none; border-color: #F5B800; box-shadow: 0 0 0 3px rgba(245, 184, 0, 0.1); }
+        .cutter-card { animation: fadeIn 0.5s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .size-badge { font-size: 0.65rem; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="text-gray-900 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 nav-blur border-b border-gray-200/50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-12 h-12">
+                        <img src="imgs/MagicTools.png" alt="Magic Tools Logo" class="w-full h-full object-contain">
+                    </div>
+                    <span class="text-xl font-bold tracking-tight">MAGIC TOOLS</span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html#productos" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">Productos</a>
+                    <a href="cookie-cutters.html" class="text-sm font-bold text-black">Cookie Cutters</a>
+                    <a href="index.html#personalizacion" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">Personalización</a>
+                </div>
+                <a href="https://wa.me/5491151181404" target="_blank" class="bg-green-500 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-green-600 transition-colors flex items-center gap-2">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">Pedir</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="pt-32 pb-12 bg-gradient-to-br from-pink-50 via-white to-purple-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-yellow/10 text-brand-yellow border border-brand-yellow/20 mb-6">
+                    <i data-lucide="cookie" class="w-4 h-4"></i>
+                    <span class="text-xs font-bold uppercase tracking-wider">Colección 2026</span>
+                </div>
+                <h1 class="text-5xl lg:text-6xl font-bold mb-6">Cookie Cutters 3D</h1>
+                <p class="text-lg text-gray-600 mb-8">Cortadores de galletas impresos en 3D con materiales aptos para alimentos. Diseños exclusivos para cada ocasión.</p>
+                
+                <!-- Search & Filter -->
+                <div class="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
+                    <div class="relative flex-1">
+                        <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+                        <input type="text" id="searchInput" placeholder="Buscar diseño..." 
+                               class="search-input w-full pl-12 pr-4 py-3 rounded-full border border-gray-300 bg-white transition-all">
+                    </div>
+                    <select id="sortSelect" class="px-6 py-3 rounded-full border border-gray-300 bg-white text-sm font-medium focus:outline-none focus:border-brand-yellow">
+                        <option value="name">Ordenar: Nombre</option>
+                        <option value="popular">Más populares</option>
+                        <option value="new">Nuevos</option>
+                        <option value="price-asc">Precio: Menor a mayor</option>
+                        <option value="price-desc">Precio: Mayor a menor</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filters -->
+    <section class="py-6 bg-white border-b border-gray-200 sticky top-20 z-40">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide" id="categoryFilters">
+                <!-- Categories injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-12 bg-gray-50 min-h-screen">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center mb-6">
+                <div id="productsCount" class="text-sm text-gray-500">Cargando productos...</div>
+                <button onclick="downloadJSON()" class="text-sm text-gray-500 hover:text-brand-yellow transition-colors flex items-center gap-1">
+                    <i data-lucide="download" class="w-4 h-4"></i>
+                    Descargar catálogo
+                </button>
+            </div>
+            
+            <div id="productsGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                <!-- Products injected via JavaScript -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="hidden text-center py-20">
+                <div class="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="search-x" class="w-10 h-10 text-gray-400"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">No encontramos resultados</h3>
+                <p class="text-gray-500">Intenta con otra búsqueda o categoría</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bulk Order CTA -->
+    <section class="py-20 bg-brand-black text-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">¿Necesitas cantidad?</h2>
+            <p class="text-gray-400 mb-8">Ofrecemos descuentos especiales para pedidos por mayor. Ideal para reposterías, eventos o regalos corporativos.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5491151181404?text=Hola!%20Me%20interesa%20un%20pedido%20de%20cookie%20cutters%20por%20mayor." 
+                   target="_blank" class="bg-brand-yellow text-black px-8 py-4 rounded-full font-bold hover:bg-yellow-400 transition-all">
+                    Consultar por mayor
+                </a>
+                <a href="data/cutters.json" download class="border border-white/30 text-white px-8 py-4 rounded-full font-medium hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="file-json" class="w-5 h-5"></i>
+                    Ver datos (JSON)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-gray-400 py-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10">
+                        <img src="imgs/MagicTools.png" alt="Magic Tools Logo" class="w-full h-full object-contain">
+                    </div>
+                    <div>
+                        <span class="text-white font-bold text-lg block">MAGIC TOOLS</span>
+                        <span class="text-xs text-gray-500">Diseño funcional para tu cocina</span>
+                    </div>
+                </a>
+                <div class="flex gap-6">
+                    <a href="https://instagram.com/magic.tools.3d" class="hover:text-brand-yellow transition-colors">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://wa.me/5491151181404" class="hover:text-green-400 transition-colors">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let cuttersData = null;
+        let currentCategory = 'all';
+        let searchTerm = '';
+
+        // Cargar JSON externo
+        async function loadData() {
+            try {
+                const response = await fetch('data/cutters.json');
+                if (!response.ok) throw new Error('No se pudo cargar el catálogo');
+                cuttersData = await response.json();
+                renderCategories();
+                renderProducts();
+            } catch (error) {
+                console.error('Error cargando datos:', error);
+                document.getElementById('productsCount').textContent = 'Error cargando productos. Recarga la página.';
+            }
+        }
+
+        function renderCategories() {
+            const container = document.getElementById('categoryFilters');
+            container.innerHTML = cuttersData.categories.map(cat => `
+                <button class="category-pill ${cat.id === 'all' ? 'active' : ''} px-6 py-2 rounded-full border border-gray-300 text-sm font-medium whitespace-nowrap transition-all hover:border-brand-yellow" 
+                        data-category="${cat.id}">
+                    ${cat.emoji} ${cat.name}
+                </button>
+            `).join('');
+        }
+
+        function formatPrice(price) {
+            return new Intl.NumberFormat('es-AR', {
+                style: 'currency',
+                currency: 'ARS',
+                minimumFractionDigits: 0
+            }).format(price);
+        }
+
+        function renderProducts() {
+            const grid = document.getElementById('productsGrid');
+            const emptyState = document.getElementById('emptyState');
+            const countLabel = document.getElementById('productsCount');
+            
+            if (!cuttersData) return;
+
+            let filtered = cuttersData.products.filter(c => {
+                const matchesCategory = currentCategory === 'all' || c.category === currentCategory;
+                const matchesSearch = c.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                    c.tags.some(t => t.toLowerCase().includes(searchTerm.toLowerCase()));
+                return matchesCategory && matchesSearch;
+            });
+
+            // Sort
+            const sortValue = document.getElementById('sortSelect').value;
+            if (sortValue === 'popular') filtered.sort((a, b) => b.popular - a.popular);
+            if (sortValue === 'new') filtered.sort((a, b) => b.new - a.new);
+            if (sortValue === 'price-asc') filtered.sort((a, b) => a.price - b.price);
+            if (sortValue === 'price-desc') filtered.sort((a, b) => b.price - a.price);
+            if (sortValue === 'name') filtered.sort((a, b) => a.name.localeCompare(b.name));
+
+            countLabel.textContent = `${filtered.length} diseños disponibles`;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            grid.innerHTML = filtered.map(cutter => `
+                <div class="cutter-card bg-white rounded-2xl overflow-hidden border border-gray-200 card-hover group">
+                    <div class="aspect-square bg-gray-100 relative overflow-hidden">
+                        <img src="${cutter.image}" 
+                             alt="${cutter.name}" 
+                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%23f3f4f6%22 width=%22400%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%239ca3af%22 font-family=%22sans-serif%22 font-size=%2214%22%3E${cutter.name}%3C/text%3E%3C/svg%3E'"
+                             class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500">
+                        ${cutter.popular ? '<span class="absolute top-2 left-2 bg-brand-yellow text-black text-xs font-bold px-2 py-1 rounded-full">POPULAR</span>' : ''}
+                        ${cutter.new ? '<span class="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">NUEVO</span>' : ''}
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-gray-900 mb-1">${cutter.name}</h3>
+                        <p class="text-brand-yellow font-bold mb-2">${formatPrice(cutter.price)}</p>
+                        <div class="flex flex-wrap gap-1 mb-3">
+                            ${cutter.sizes.map(s => `<span class="size-badge bg-gray-100 text-gray-600 px-2 py-1 rounded">${s}</span>`).join('')}
+                        </div>
+                        <button onclick="orderCutter('${cutter.name}', '${cutter.id}')" class="w-full bg-brand-black text-white py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors flex items-center justify-center gap-2">
+                            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                            Pedir
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+            
+            lucide.createIcons();
+        }
+
+        function orderCutter(name, id) {
+            const mensaje = `Hola! Me interesa el cookie cutter: ${name} (ID: ${id}). ¿Podés confirmarme disponibilidad y precio?`;
+            const url = `https://wa.me/5491151181404?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        }
+
+        function downloadJSON() {
+            window.open('data/cutters.json', '_blank');
+        }
+
+        // Event Listeners
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchTerm = e.target.value;
+            renderProducts();
+        });
+
+        document.getElementById('sortSelect').addEventListener('change', renderProducts);
+
+        document.getElementById('categoryFilters').addEventListener('click', (e) => {
+            if (e.target.classList.contains('category-pill')) {
+                document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+                e.target.classList.add('active');
+                currentCategory = e.target.dataset.category;
+                renderProducts();
+            }
+        });
+
+        // Init
+        loadData();
+    </script>
+</body>
+</html>

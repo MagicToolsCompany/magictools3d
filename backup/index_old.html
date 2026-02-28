@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAGIC TOOLS | Accesorios 3D para Thermomix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafafa;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .brand-yellow { color: #F5B800; }
+        .bg-brand-yellow { background-color: #F5B800; }
+        .brand-black { color: #1a1a1a; }
+        .bg-brand-black { background-color: #1a1a1a; }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #1a1a1a 0%, #525252 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 50%, #f0f0f0 100%);
+        }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+        }
+        .logo-spin {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .logo-spin:hover {
+            transform: rotate(180deg);
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        .slide-up {
+            animation: slideUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .color-dot {
+            transition: transform 0.2s;
+        }
+        .color-dot:hover {
+            transform: scale(1.2);
+        }
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .gear-spin {
+            animation: spin 20s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .image-placeholder {
+            background: linear-gradient(135deg, #e5e5e5 0%, #f0f0f0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body class="text-gray-900 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 nav-blur border-b border-gray-200/50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 relative logo-spin cursor-pointer">
+                        <img src="imgs/MagicTools.png" alt="Magic Tools Logo" class="w-full h-full object-contain">
+                    </div>
+                    <span class="text-xl font-bold tracking-tight brand-black">MAGIC TOOLS</span>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#productos" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">Productos</a>
+                    <a href="#personalizacion" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">Personalización</a>
+                    <a href="#materiales" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">Materiales</a>
+                    <a href="#como-comprar" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">Cómo Comprar</a>
+                </div>
+                <button onclick="alert('Carrito en desarrollo. Contáctanos por WhatsApp para pedidos.')" class="bg-brand-black text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors flex items-center gap-2">
+                    <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">Pedir</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-32 pb-20 lg:pt-48 lg:pb-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="slide-up" style="animation-delay: 0.1s;">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 mb-6 shadow-sm">
+                        <span class="w-2 h-2 bg-brand-yellow rounded-full animate-pulse"></span>
+                        <span class="text-xs font-medium text-gray-600">Impresión 3D de alta precisión</span>
+                    </div>
+                    <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6 gradient-text">
+                        Diseño funcional<br>para tu cocina
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed">
+                        Accesorios inteligentes para Thermomix impresos en 3D. Organiza tus utensilios, optimiza tu espacio y personaliza cada detalle con tu color favorito.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#productos" class="bg-brand-black text-white px-8 py-4 rounded-full font-medium hover:bg-gray-800 transition-all hover:scale-105 flex items-center gap-2 shadow-lg shadow-gray-900/20">
+                            Ver catálogo
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="https://wa.me/5491151181404" target="_blank" class="bg-brand-yellow text-black px-8 py-4 rounded-full font-medium hover:bg-yellow-400 transition-all flex items-center gap-2">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="slide-up relative" style="animation-delay: 0.3s;">
+                    <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-100 shadow-2xl">
+                        <img src="imgs/hero-cocina.jpg" 
+                             alt="Cocina moderna con Thermomix" 
+                             onerror="this.parentElement.classList.add('image-placeholder'); this.parentElement.innerHTML = '<span>Agregar: hero-cocina.jpg</span>';"
+                             class="object-cover w-full h-full opacity-90 hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <div class="bg-white/95 backdrop-blur rounded-2xl p-4 flex items-center gap-4 shadow-lg">
+                                <div class="w-12 h-12 bg-brand-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="award" class="w-6 h-6 text-black"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-black">Calidad Garantizada</p>
+                                    <p class="text-xs text-gray-600">PETG & ABS Premium</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 card-hover">
+                    <div class="w-12 h-12 bg-brand-yellow rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-yellow-500/20">
+                        <i data-lucide="palette" class="w-6 h-6 text-black"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Colores Personalizables</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Amplia gama cromática disponible. Amarillo, negro, blanco y más. Elige el que combine con tu cocina.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 card-hover">
+                    <div class="w-12 h-12 bg-brand-black rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-brand-yellow"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Materiales Premium</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Fabricados exclusivamente en PETG y ABS de alta calidad para una larga vida útil y fácil limpieza.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 card-hover">
+                    <div class="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="ruler" class="w-6 h-6 text-gray-700"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Diseño a Medida</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">¿Tienes una idea especial? Transformamos tu concepto en una herramienta real y personalizada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section id="productos" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Catálogo de Productos</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Soluciones inteligentes para organizar y optimizar tu Thermomix</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- TM-Holder -->
+                <div class="group bg-white rounded-3xl overflow-hidden border border-gray-200 card-hover">
+                    <div class="aspect-[4/3] bg-gray-100 relative overflow-hidden">
+                        <img src="imgs/tm-holder.jpg" 
+                             alt="TM-Holder - Soporte para tapa, espátula y mariposa" 
+                             onerror="this.parentElement.classList.add('image-placeholder'); this.parentElement.innerHTML = '<span>Agregar: tm-holder.jpg</span>';"
+                             class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-brand-yellow text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                            MÁS VENDIDO
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">TM-Holder</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Todo en su lugar. Mantén la tapa, la espátula y la mariposa de tu TM6 o TM7 siempre al alcance.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-2">
+                                <div class="w-5 h-5 rounded-full bg-black border-2 border-white shadow color-dot" title="Negro"></div>
+                                <div class="w-5 h-5 rounded-full bg-white border-2 border-gray-300 shadow color-dot" title="Blanco"></div>
+                                <div class="w-5 h-5 rounded-full bg-[#F5B800] border-2 border-white shadow color-dot" title="Amarillo"></div>
+                                <div class="w-5 h-5 rounded-full bg-gray-400 border-2 border-white shadow color-dot" title="Gris"></div>
+                            </div>
+                            <button onclick="contactar('TM-Holder')" class="text-sm font-bold text-black hover:text-brand-yellow transition-colors flex items-center gap-1">
+                                Consultar <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TM-Caddy Base -->
+                <div class="group bg-white rounded-3xl overflow-hidden border border-gray-200 card-hover">
+                    <div class="aspect-[4/3] bg-gray-100 relative overflow-hidden">
+                        <img src="imgs/tm-caddy-base.jpg" 
+                             alt="TM-Caddy Base - Soporte integral de mesada" 
+                             onerror="this.parentElement.classList.add('image-placeholder'); this.parentElement.innerHTML = '<span>Agregar: tm-caddy-base.jpg</span>';"
+                             class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">TM-Caddy Base</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Soporte integral de mesada que mantiene todos tus periféricos esenciales a mano y protegidos del desgaste.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-2">
+                                <div class="w-5 h-5 rounded-full bg-white border-2 border-gray-300 shadow color-dot" title="Blanco"></div>
+                                <div class="w-5 h-5 rounded-full bg-black border-2 border-white shadow color-dot" title="Negro"></div>
+                                <div class="w-5 h-5 rounded-full bg-[#F5B800] border-2 border-white shadow color-dot" title="Amarillo"></div>
+                            </div>
+                            <button onclick="contactar('TM-Caddy Base')" class="text-sm font-bold text-black hover:text-brand-yellow transition-colors flex items-center gap-1">
+                                Consultar <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TM-Soporte Varoma -->
+                <div class="group bg-white rounded-3xl overflow-hidden border border-gray-200 card-hover">
+                    <div class="aspect-[4/3] bg-gray-100 relative overflow-hidden">
+                        <img src="imgs/tm-soporte-varoma.jpg" 
+                             alt="TM-Soporte Varoma - Soporte de pared" 
+                             onerror="this.parentElement.classList.add('image-placeholder'); this.parentElement.innerHTML = '<span>Agregar: tm-soporte-varoma.jpg</span>';"
+                             class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">TM-Soporte Varoma</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Libera tu mesada. Soporte de pared para Varoma Thermomix con instalación fácil y segura.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-2">
+                                <div class="w-5 h-5 rounded-full bg-white border-2 border-gray-300 shadow color-dot" title="Blanco"></div>
+                                <div class="w-5 h-5 rounded-full bg-gray-200 border-2 border-gray-300 shadow color-dot" title="Gris claro"></div>
+                                <div class="w-5 h-5 rounded-full bg-black border-2 border-white shadow color-dot" title="Negro"></div>
+                            </div>
+                            <button onclick="contactar('TM-Soporte Varoma')" class="text-sm font-bold text-black hover:text-brand-yellow transition-colors flex items-center gap-1">
+                                Consultar <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TM-Wisker Top -->
+                <div class="group bg-white rounded-3xl overflow-hidden border border-gray-200 card-hover">
+                    <div class="aspect-[4/3] bg-gray-100 relative overflow-hidden">
+                        <img src="imgs/tm-wisker-top.jpg" 
+                             alt="TM-Wisker Top - Soporte para mariposa" 
+                             onerror="this.parentElement.classList.add('image-placeholder'); this.parentElement.innerHTML = '<span>Agregar: tm-wisker-top.jpg</span>';"
+                             class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">TM-Wisker Top</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Mantén la mariposa siempre a mano pero fuera de la vista. Compatible con TM6/TM7.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-2">
+                                <div class="w-5 h-5 rounded-full bg-black border-2 border-white shadow color-dot" title="Negro"></div>
+                                <div class="w-5 h-5 rounded-full bg-white border-2 border-gray-300 shadow color-dot" title="Blanco"></div>
+                                <div class="w-5 h-5 rounded-full bg-[#F5B800] border-2 border-white shadow color-dot" title="Amarillo"></div>
+                            </div>
+                            <button onclick="contactar('TM-Wisker Top')" class="text-sm font-bold text-black hover:text-brand-yellow transition-colors flex items-center gap-1">
+                                Consultar <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TM-Key -->
+                <div class="group bg-white rounded-3xl overflow-hidden border border-gray-200 card-hover">
+                    <div class="aspect-[4/3] bg-gray-100 relative overflow-hidden">
+                        <img src="imgs/tm-key.jpg" 
+                             alt="TM-Key - Extractor de masa" 
+                             onerror="this.parentElement.classList.add('image-placeholder'); this.parentElement.innerHTML = '<span>Agregar: tm-key.jpg</span>';"
+                             class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">TM-Key</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Extrae la masa del vaso de forma eficiente y sencilla. Compatible con TM6/TM7.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-2">
+                                <div class="w-5 h-5 rounded-full bg-white border-2 border-gray-300 shadow color-dot" title="Blanco"></div>
+                                <div class="w-5 h-5 rounded-full bg-gray-100 border-2 border-gray-300 shadow color-dot" title="Natural"></div>
+                                <div class="w-5 h-5 rounded-full bg-[#F5B800] border-2 border-white shadow color-dot" title="Amarillo"></div>
+                            </div>
+                            <button onclick="contactar('TM-Key')" class="text-sm font-bold text-black hover:text-brand-yellow transition-colors flex items-center gap-1">
+                                Consultar <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cookie Cutters -->
+                <div class="group bg-white rounded-3xl overflow-hidden border border-gray-200 card-hover relative">
+                    <div class="absolute inset-0 bg-gradient-to-br from-pink-50 to-purple-50 opacity-50"></div>
+                    <div class="aspect-[4/3] relative overflow-hidden">
+                        <img src="imgs/cookie-cutters.jpg" 
+                             alt="Cookie Cutters 3D - Cortadores de galletas" 
+                             onerror="this.parentElement.classList.add('image-placeholder'); this.parentElement.innerHTML = '<span>Agregar: cookie-cutters.jpg</span>';"
+                             class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-brand-yellow text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                            NUEVO
+                        </div>
+                    </div>
+                    <div class="p-6 relative">
+                        <h3 class="text-xl font-bold mb-2">Cookie Cutters 3D</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Cortadores de galletas personalizados. Diseños únicos para cada ocasión especial.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-2">
+                                <div class="w-5 h-5 rounded-full bg-pink-400 border-2 border-white shadow color-dot" title="Rosa"></div>
+                                <div class="w-5 h-5 rounded-full bg-purple-400 border-2 border-white shadow color-dot" title="Lila"></div>
+                                <div class="w-5 h-5 rounded-full bg-[#F5B800] border-2 border-white shadow color-dot" title="Amarillo"></div>
+                                <span class="text-xs text-gray-500 ml-1 flex items-center">+20</span>
+                            </div>
+                            <button onclick="contactar('Cookie Cutters')" class="text-sm font-bold text-black hover:text-brand-yellow transition-colors flex items-center gap-1">
+                                Consultar <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Buy -->
+    <section id="como-comprar" class="py-24 bg-brand-black text-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">¿Cómo comprar?</h2>
+                <p class="text-gray-400">Simple, rápido y personalizado</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-brand-yellow rounded-full flex items-center justify-center mx-auto mb-4 text-black font-bold text-xl">1</div>
+                    <h3 class="font-bold mb-2">Elige producto</h3>
+                    <p class="text-sm text-gray-400">Selecciona el accesorio que necesitas de nuestro catálogo</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-brand-yellow rounded-full flex items-center justify-center mx-auto mb-4 text-black font-bold text-xl">2</div>
+                    <h3 class="font-bold mb-2">Personaliza</h3>
+                    <p class="text-sm text-gray-400">Escoge el color (amarillo, negro, blanco, etc.)</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-brand-yellow rounded-full flex items-center justify-center mx-auto mb-4 text-black font-bold text-xl">3</div>
+                    <h3 class="font-bold mb-2">Contacta</h3>
+                    <p class="text-sm text-gray-400">Escríbenos por WhatsApp o Instagram</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-brand-yellow rounded-full flex items-center justify-center mx-auto mb-4 text-black font-bold text-xl">4</div>
+                    <h3 class="font-bold mb-2">Recibe</h3>
+                    <p class="text-sm text-gray-400">Te lo enviamos o coordinamos retiro</p>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <a href="https://wa.me/5491151181404" target="_blank" class="inline-flex items-center gap-3 bg-green-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-green-600 transition-all hover:scale-105 shadow-lg shadow-green-500/30">
+                    <i data-lucide="message-circle" class="w-6 h-6"></i>
+                    Escribir por WhatsApp
+                </a>
+                <p class="mt-4 text-gray-400 text-sm">Respuesta en menos de 24hs</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customization Section -->
+    <section id="personalizacion" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-yellow/10 text-brand-yellow border border-brand-yellow/20 mb-6">
+                        <i data-lucide="sparkles" class="w-4 h-4"></i>
+                        <span class="text-xs font-bold uppercase tracking-wider">Proyectos Especiales</span>
+                    </div>
+                    <h2 class="text-4xl font-bold mb-6">¿Tienes una idea?</h2>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Somos especialistas en diseño 3D. Transformamos tu concepto en una herramienta real, funcional y completamente personalizada para tus necesidades específicas.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-yellow flex items-center justify-center mt-0.5 flex-shrink-0">
+                                <i data-lucide="check" class="w-4 h-4 text-black"></i>
+                            </div>
+                            <span class="text-gray-700">Diseño personalizado desde cero según tus especificaciones</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-yellow flex items-center justify-center mt-0.5 flex-shrink-0">
+                                <i data-lucide="check" class="w-4 h-4 text-black"></i>
+                            </div>
+                            <span class="text-gray-700">Elección de colores corporativos o preferidos</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-yellow flex items-center justify-center mt-0.5 flex-shrink-0">
+                                <i data-lucide="check" class="w-4 h-4 text-black"></i>
+                            </div>
+                            <span class="text-gray-700">Prototipado rápido y ajustes sin costo adicional</span>
+                        </li>
+                    </ul>
+                    <button onclick="contactar('Proyecto Personalizado')" class="bg-brand-black text-white px-8 py-4 rounded-full font-medium hover:bg-gray-800 transition-all flex items-center gap-2">
+                        <i data-lucide="lightbulb" class="w-5 h-5"></i>
+                        Consultar proyecto
+                    </button>
+                </div>
+                <div class="relative">
+                    <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-gray-100 shadow-xl">
+                        <img src="imgs/taller-3d.jpg" 
+                             alt="Nuestro taller de impresión 3D" 
+                             onerror="this.parentElement.classList.add('image-placeholder'); this.parentElement.innerHTML = '<span>Agregar: taller-3d.jpg</span>';"
+                             class="object-cover w-full h-full hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 hidden lg:block">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-brand-yellow rounded-full flex items-center justify-center">
+                                <i data-lucide="printer" class="w-6 h-6 text-black"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold">Impresión 3D</p>
+                                <p class="text-xs text-gray-500">Precisión 0.1mm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materials -->
+    <section id="materiales" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Materiales de Alta Calidad</h2>
+                <p class="text-gray-600">Durabilidad y seguridad garantizadas en cada impresión</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-3xl border border-gray-200 card-hover">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-xl font-bold text-blue-600">PETG</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">PETG Premium</h3>
+                    <p class="text-gray-600 mb-4">Ideal para uso alimentario y contacto con la cocina. Resistente a impactos, fácil de limpiar y duradero.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+                            Resistente a temperaturas hasta 75°C
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+                            Apto para lavavajillas
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+                            No tóxico y seguro para alimentos
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border border-gray-200 card-hover">
+                    <div class="w-16 h-16 bg-gray-800 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-xl font-bold text-white">ABS</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">ABS de Alta Resistencia</h3>
+                    <p class="text-gray-600 mb-4">Máxima durabilidad para soportes y estructuras. Acabado profesional y rigidez superior.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+                            Alta resistencia mecánica
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+                            Acabado suave al tacto (vapor smoothing)
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+                            Ideal para soportes de pared
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contacto" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">¿Listo para tu pedido?</h2>
+                    <p class="text-gray-600 text-lg mb-8">
+                        Contáctanos directamente por WhatsApp para una atención personalizada y rápida.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <a href="https://wa.me/5491151181404" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-green-50 border border-green-200 hover:bg-green-100 transition-colors group">
+                            <div class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg shadow-green-500/30 group-hover:scale-110 transition-transform">
+                                <i data-lucide="message-circle" class="w-7 h-7"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-green-700 font-medium">WhatsApp</p>
+                                <p class="text-lg font-bold text-green-800">+54 9 11 5118-1404</p>
+                                <p class="text-xs text-green-600">Respuesta inmediata</p>
+                            </div>
+                        </a>
+
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-gray-50 border border-gray-200">
+                            <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                                <i data-lucide="instagram" class="w-7 h-7"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 font-medium">Instagram</p>
+                                <p class="text-lg font-bold text-gray-900">@magic.tools.3d</p>
+                                <p class="text-xs text-gray-500">Síguenos para novedades</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-gray-50 border border-gray-200">
+                            <div class="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
+                                <i data-lucide="mail" class="w-7 h-7"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 font-medium">Email</p>
+                                <p class="text-lg font-bold text-gray-900">magictoolscompany@gmail.com</p>
+                                <p class="text-xs text-gray-500">Para consultas generales</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    <div id="debugPanel" class="hidden mb-4 p-3 bg-blue-50 border border-blue-200 rounded text-xs font-mono text-blue-800">
+        <strong>Debug Info:</strong>
+        <div id="debugText"></div>
+    </div>
+    
+    <div class="bg-gray-50 p-8 rounded-3xl border border-gray-200">
+    <h3 class="text-2xl font-bold mb-6">Envíanos un mensaje</h3>
+    
+    <!-- Success message after redirect back from Formspree -->
+    <div id="successMsg" class="hidden mb-6 p-4 bg-green-50 border border-green-200 rounded-xl text-green-800">
+        <p class="font-bold">¡Mensaje enviado!</p>
+        <p class="text-sm">Te contactaremos pronto.</p>
+    </div>
+    
+    <form action="https://formspree.io/f/mgolobwz" method="POST" class="space-y-4">
+        <!-- Redirect back to your page after submission -->
+        <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
+        
+        <!-- Prevent spam -->
+        <input type="text" name="_gotcha" style="display:none">
+        
+        <div>
+            <label class="block text-sm font-medium mb-2 text-gray-700">Nombre *</label>
+            <input type="text" name="nombre" required 
+                class="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 focus:outline-none focus:border-brand-yellow focus:ring-2 focus:ring-brand-yellow/20 transition-all" 
+                placeholder="Tu nombre">
+        </div>
+        
+        <div>
+            <label class="block text-sm font-medium mb-2 text-gray-700">Email *</label>
+            <input type="email" name="email" required 
+                class="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 focus:outline-none focus:border-brand-yellow focus:ring-2 focus:ring-brand-yellow/20 transition-all" 
+                placeholder="tu@email.com">
+        </div>
+        
+        <div>
+            <label class="block text-sm font-medium mb-2 text-gray-700">Producto *</label>
+            <select name="producto" required 
+                class="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 focus:outline-none focus:border-brand-yellow focus:ring-2 focus:ring-brand-yellow/20 transition-all">
+                <option value="">Selecciona...</option>
+                <option>TM-Holder</option>
+                <option>TM-Caddy Base</option>
+                <option>TM-Soporte Varoma</option>
+                <option>TM-Wisker Top</option>
+                <option>TM-Key</option>
+                <option>Cookie Cutters</option>
+                <option>Proyecto personalizado</option>
+            </select>
+        </div>
+        
+        <div>
+            <label class="block text-sm font-medium mb-2 text-gray-700">Color preferido</label>
+            <input type="text" name="color" 
+                class="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 focus:outline-none focus:border-brand-yellow focus:ring-2 focus:ring-brand-yellow/20 transition-all" 
+                placeholder="Ej: Amarillo, Negro...">
+        </div>
+        
+        <div>
+            <label class="block text-sm font-medium mb-2 text-gray-700">Mensaje *</label>
+            <textarea name="mensaje" rows="4" required 
+                class="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 focus:outline-none focus:border-brand-yellow focus:ring-2 focus:ring-brand-yellow/20 transition-all" 
+                placeholder="¿Algún detalle especial?"></textarea>
+        </div>
+        
+        <button type="submit" 
+            class="w-full bg-brand-black text-white py-4 rounded-xl font-bold hover:bg-gray-800 transition-all flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+            Enviar consulta
+        </button>
+    </form>
+</div>
+
+<script>
+// Check if coming back from successful submission
+if (window.location.search.includes('submitted=true') || 
+    document.referrer.includes('formspree.io')) {
+    document.getElementById('successMsg').classList.remove('hidden');
+    document.querySelector('form').reset();
+}
+</script>    <!-- Footer -->
+    <footer class="bg-brand-black text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 relative">
+                        <img src="imgs/MagicTools.png" alt="Magic Tools Logo" class="w-full h-full object-contain">
+                    </div>
+                    <div>
+                        <span class="text-white font-bold text-lg block">MAGIC TOOLS</span>
+                        <span class="text-xs text-gray-500">Diseño funcional para tu cocina</span>
+                    </div>
+                </div>
+                <p class="text-sm">© 2026 Magic Tools. Todos los derechos reservados.</p>
+                <div class="flex gap-6">
+                    <a href="https://instagram.com/magic.tools.3d" class="hover:text-brand-yellow transition-colors p-2 hover:bg-white/10 rounded-full">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://wa.me/5491151181404" class="hover:text-green-400 transition-colors p-2 hover:bg-white/10 rounded-full">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Contact function
+        function contactar(producto) {
+            const mensaje = `Hola! Me interesa el ${producto}. ¿Podés darme más info?`;
+            const url = `https://wa.me/5491151181404?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        }
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card-hover').forEach((el) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

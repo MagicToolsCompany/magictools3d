@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto | MAGIC TOOLS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fafafa; }
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+        .brand-yellow { color: #F5B800; }
+        .bg-brand-yellow { background-color: #F5B800; }
+        .bg-brand-black { background-color: #1a1a1a; }
+        .nav-blur { backdrop-filter: blur(12px); background-color: rgba(255, 255, 255, 0.9); }
+        
+        .gallery-thumb { transition: all 0.3s; cursor: pointer; }
+        .gallery-thumb:hover, .gallery-thumb.active { opacity: 1; border-color: #F5B800; }
+        .gallery-thumb:not(.active) { opacity: 0.6; }
+        
+        .color-option { transition: all 0.2s; cursor: pointer; }
+        .color-option:hover { transform: scale(1.1); }
+        .color-option.selected { ring: 2px; ring-offset: 2px; ring-color: #F5B800; }
+        
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s; }
+        
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        .feature-icon { animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        
+        @keyframes pulse-badge {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .discount-badge {
+            animation: pulse-badge 2s ease-in-out infinite;
+        }
+        
+        /* Indicador de actualización del dólar */
+        .dolar-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            transition: all 0.3s;
+        }
+        .dolar-status.live {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+        .dolar-status.cached {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+        .dolar-status.offline {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+        .dolar-status svg {
+            width: 0.875rem;
+            height: 0.875rem;
+        }
+    </style>
+</head>
+<body class="text-gray-900 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 nav-blur border-b border-gray-200/50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-12 h-12">
+                        <img src="imgs/MagicTools.png" alt="Magic Tools Logo" class="w-full h-full object-contain">
+                    </div>
+                    <span class="text-xl font-bold tracking-tight">MAGIC TOOLS</span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html#productos" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">Productos</a>
+                    <a href="cookie-cutters.html" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">Cookie Cutters</a>
+                    <a href="index.html#personalizacion" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">Personalización</a>
+                </div>
+                <a href="https://wa.me/5491151181404" target="_blank" class="bg-green-500 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-green-600 transition-colors flex items-center gap-2">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">Consultar</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="pt-28 pb-4 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <nav class="flex items-center gap-2 text-sm text-gray-500">
+                <a href="index.html" class="hover:text-black transition-colors">Inicio</a>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                <a href="index.html#productos" class="hover:text-black transition-colors">Productos</a>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                <span id="breadcrumbName" class="text-black font-medium">Cargando...</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loadingState" class="pt-32 pb-20 text-center">
+        <div class="w-16 h-16 border-4 border-brand-yellow border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+        <p class="text-gray-600">Cargando producto...</p>
+        <p id="loadingDolarStatus" class="text-sm text-gray-400 mt-2">Consultando cotización...</p>
+    </div>
+
+    <!-- Product Detail -->
+    <section id="productDetail" class="hidden py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                
+                <!-- Gallery -->
+                <div class="space-y-4">
+                    <div class="aspect-square bg-gray-100 rounded-3xl overflow-hidden relative">
+                        <img id="mainImage" src="" alt="Producto" class="object-cover w-full h-full hover:scale-105 transition-transform duration-500">
+                        <div id="productBadge" class="absolute top-4 left-4 bg-brand-yellow text-black px-4 py-2 rounded-full text-sm font-bold hidden">
+                            MÁS VENDIDO
+                        </div>
+                        <div id="discountBadge" class="absolute top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-bold hidden discount-badge">
+                            -0% OFF
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-4 gap-3" id="galleryThumbs">
+                        <!-- Thumbnails injected via JS -->
+                    </div>
+                </div>
+
+                <!-- Info -->
+                <div class="lg:sticky lg:top-32 lg:self-start">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs font-medium mb-4">
+                        <i data-lucide="printer" class="w-3 h-3"></i>
+                        <span>Impresión 3D</span>
+                    </div>
+                    
+                    <h1 id="productTitle" class="text-4xl lg:text-5xl font-bold mb-2">Cargando...</h1>
+                    
+                    <!-- Indicador de estado del dólar -->
+                    <div id="dolarStatus" class="dolar-status cached mb-4 hidden">
+                        <i data-lucide="wifi-off" class="w-3.5 h-3.5"></i>
+                        <span id="dolarStatusText">Cotización actualizada</span>
+                    </div>
+                    
+                    <!-- SECCIÓN DE PRECIO -->
+                    <div id="priceContainer" class="mb-6">
+                        <div id="simplePrice" class="hidden">
+                            <p class="text-3xl font-bold text-brand-yellow">
+                                USD <span id="priceUSD">0</span> / ARS $<span id="priceAmount">0</span>
+                            </p>
+                            <p class="text-sm text-gray-500 mt-1">Cotización: $<span id="dolarRateDisplay">0</span> por USD</p>
+                        </div>
+                        
+                        <div id="discountPrice" class="hidden">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold discount-badge">
+                                    🔥 <span id="discountPercent">0</span>% OFF
+                                </span>
+                                <span class="text-sm text-gray-500">¡Oferta limitada!</span>
+                            </div>
+                            <div class="flex items-baseline gap-3 flex-wrap">
+                                <span class="text-xl text-gray-400 line-through decoration-red-400 decoration-2">
+                                    USD <span id="originalPriceUSD">0</span>
+                                </span>
+                                <span class="text-4xl font-bold text-brand-yellow">
+                                    USD <span id="finalPriceUSD">0</span>
+                                </span>
+                            </div>
+                            <p class="text-lg text-gray-700 mt-1">
+                                ARS $<span id="finalPriceARS">0</span>
+                            </p>
+                            <p class="text-sm text-green-600 mt-2 font-medium">
+                                <i data-lucide="tag" class="w-4 h-4 inline"></i>
+                                Ahorrás USD <span id="savingsUSD">0</span> / ARS $<span id="savingsARS">0</span>
+                            </p>
+                            <p class="text-xs text-gray-500 mt-1">Cotización: $<span id="dolarRateDisplayDiscount">0</span> por USD</p>
+                        </div>
+                        
+                        <div id="noPrice" class="hidden">
+                            <p class="text-2xl font-bold text-gray-600">Consultar precio</p>
+                            <p class="text-sm text-gray-500 mt-1">Contactanos para cotización actualizada</p>
+                        </div>
+                    </div>
+                    
+                    <p id="productDesc" class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Cargando descripción...
+                    </p>
+
+                    <!-- Color Selector -->
+                    <div class="mb-8">
+                        <label class="block text-sm font-medium mb-3">Color <span id="selectedColor" class="text-gray-500 font-normal">(selecciona uno)</span></label>
+                        <div class="flex gap-3" id="colorSelector">
+                            <!-- Colors injected via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="grid grid-cols-2 gap-4 mb-8" id="featuresGrid">
+                        <!-- Features injected via JS -->
+                    </div>
+
+                    <!-- CTA -->
+                    <button id="orderBtn" onclick="orderProduct()" class="w-full bg-green-500 text-white py-4 rounded-xl font-bold text-lg hover:bg-green-600 transition-all flex items-center justify-center gap-3 shadow-lg shadow-green-500/30 mb-4">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        Consultar por WhatsApp
+                    </button>
+                    
+                    <p class="text-center text-sm text-gray-500">
+                        <i data-lucide="check-circle" class="w-4 h-4 inline text-green-500 mr-1"></i>
+                        Respuesta en menos de 24 horas
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabs Section -->
+    <section id="tabsSection" class="hidden py-12 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+            <div class="flex gap-8 border-b border-gray-200 mb-8 overflow-x-auto">
+                <button class="tab-btn active pb-4 text-sm font-bold border-b-2 border-brand-yellow whitespace-nowrap" data-tab="descripcion">Descripción</button>
+                <button class="tab-btn pb-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-black transition-colors whitespace-nowrap" data-tab="especificaciones">Especificaciones</button>
+                <button class="tab-btn pb-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-black transition-colors whitespace-nowrap" data-tab="cuidados">Cuidados</button>
+            </div>
+
+            <div id="descripcion" class="tab-content active">
+                <div class="prose max-w-none">
+                    <p id="fullDesc" class="text-gray-600 leading-relaxed mb-4">Cargando...</p>
+                    <ul class="space-y-2 text-gray-600" id="featuresList">
+                        <!-- Features injected via JS -->
+                    </ul>
+                </div>
+            </div>
+
+            <div id="especificaciones" class="tab-content">
+                <table class="w-full text-sm">
+                    <tbody class="divide-y divide-gray-200" id="specsTable">
+                        <!-- Specs injected via JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="cuidados" class="tab-content">
+                <ul class="space-y-3 text-gray-600" id="careList">
+                    <!-- Care instructions injected via JS -->
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section id="relatedSection" class="hidden py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 class="text-2xl font-bold mb-8">También te puede interesar</h2>
+            <div class="grid md:grid-cols-3 gap-6" id="relatedProducts">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Error State -->
+    <div id="errorState" class="hidden pt-32 pb-20 text-center">
+        <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="package-x" class="w-10 h-10 text-gray-400"></i>
+        </div>
+        <h1 class="text-2xl font-bold mb-2">Producto no encontrado</h1>
+        <p class="text-gray-600 mb-6">El producto que buscas no existe o fue removido.</p>
+        <a href="index.html" class="inline-flex items-center gap-2 bg-brand-black text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            Volver al inicio
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-brand-black text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10">
+                        <img src="imgs/MagicTools.png" alt="Magic Tools Logo" class="w-full h-full object-contain">
+                    </div>
+                    <div>
+                        <span class="text-white font-bold text-lg block">MAGIC TOOLS</span>
+                        <span class="text-xs text-gray-500">Diseño funcional para tu cocina</span>
+                    </div>
+                </a>
+                <div class="flex gap-6">
+                    <a href="https://instagram.com/magic.tools.3d" class="hover:text-brand-yellow transition-colors">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://wa.me/5491151181404" class="hover:text-green-400 transition-colors">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let productsDB = null;
+        let dolarRate = null;
+        let dolarSource = 'fallback'; // 'live', 'cache', 'fallback'
+        let currentProduct = null;
+        let selectedColor = null;
+        let currentImageIndex = 0;
+
+        // APIs disponibles para consultar el dólar (en orden de preferencia)
+        const DOLAR_APIS = [
+            {
+                name: 'DolarAPI (Blue)',
+                url: 'https://dolarapi.com/v1/dolares/blue',
+                extractor: (data) => data.venta
+            },
+            {
+                name: 'Bluelytics',
+                url: 'https://api.bluelytics.com.ar/v2/latest',
+                extractor: (data) => data.blue.value_sell
+            },
+            {
+                name: 'DolarSi (oficial)',
+                url: 'https://www.dolarsi.com/api/api.php?type=valoresprincipales',
+                extractor: (data) => {
+                    const blue = data.find(item => item.casa.nombre === 'Dolar Blue');
+                    return blue ? parseFloat(blue.casa.venta.replace(',', '.')) : null;
+                }
+            }
+        ];
+
+        // Fallback: Leer desde localStorage o archivo local
+        async function getFallbackDolar() {
+            // Intentar leer de localStorage primero
+            const cached = localStorage.getItem('magicTools_dolarRate');
+            const cachedTime = localStorage.getItem('magicTools_dolarRate_time');
+            const cachedSource = localStorage.getItem('magicTools_dolarRate_source');
+            
+            if (cached && cachedTime) {
+                const age = Date.now() - parseInt(cachedTime);
+                const maxAge = 24 * 60 * 60 * 1000; // 24 horas
+                
+                if (age < maxAge) {
+                    console.log('Usando cotización cacheada de localStorage');
+                    return {
+                        rate: parseFloat(cached),
+                        source: 'cache',
+                        timestamp: new Date(parseInt(cachedTime)).toISOString(),
+                        apiName: cachedSource || 'cache'
+                    };
+                }
+            }
+            
+            // Si no hay cache válido, intentar leer el archivo dolar.json
+            try {
+                const response = await fetch('data/dolar.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    return {
+                        rate: data.rate,
+                        source: 'fallback',
+                        timestamp: data.lastUpdated,
+                        apiName: 'dolar.json local'
+                    };
+                }
+            } catch (e) {
+                console.log('No se pudo leer dolar.json:', e);
+            }
+            
+            // Último recurso: valor hardcodeado
+            return {
+                rate: 1235,
+                source: 'fallback',
+                timestamp: new Date().toISOString(),
+                apiName: 'default'
+            };
+        }
+
+        // Consultar API del dólar en tiempo real
+        async function fetchDolarRate() {
+            const loadingStatus = document.getElementById('loadingDolarStatus');
+            
+            // Intentar cada API en orden
+            for (const api of DOLAR_APIS) {
+                try {
+                    if (loadingStatus) {
+                        loadingStatus.textContent = `Consultando ${api.name}...`;
+                    }
+                    
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 seg timeout
+                    
+                    const response = await fetch(api.url, {
+                        signal: controller.signal,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    clearTimeout(timeoutId);
+                    
+                    if (!response.ok) continue;
+                    
+                    const data = await response.json();
+                    const rate = api.extractor(data);
+                    
+                    if (rate && rate > 0) {
+                        // Guardar en localStorage para uso offline
+                        localStorage.setItem('magicTools_dolarRate', rate.toString());
+                        localStorage.setItem('magicTools_dolarRate_time', Date.now().toString());
+                        localStorage.setItem('magicTools_dolarRate_source', api.name);
+                        
+                        console.log(`✅ Dólar obtenido de ${api.name}: $${rate}`);
+                        
+                        return {
+                            rate: rate,
+                            source: 'live',
+                            timestamp: new Date().toISOString(),
+                            apiName: api.name
+                        };
+                    }
+                } catch (error) {
+                    console.log(`❌ Falló ${api.name}:`, error.message);
+                    continue;
+                }
+            }
+            
+            // Si todas las APIs fallan, usar fallback
+            console.log('⚠️ Todas las APIs fallaron, usando fallback');
+            return await getFallbackDolar();
+        }
+
+        async function init() {
+            try {
+                // 1. Obtener cotización del dólar (API o fallback)
+                const dolarData = await fetchDolarRate();
+                dolarRate = dolarData.rate;
+                dolarSource = dolarData.source;
+                
+                console.log('Cotización final:', dolarData);
+                
+                // 2. Cargar productos
+                const productsResponse = await fetch('data/products.json');
+                if (!productsResponse.ok) throw new Error('No se pudo cargar la base de datos de productos');
+                
+                const productsData = await productsResponse.json();
+                productsDB = productsData.products;
+                
+                // 3. Obtener ID de URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const productId = urlParams.get('id');
+                
+                if (!productId || !productsDB.find(p => p.id === productId)) {
+                    showError();
+                    return;
+                }
+                
+                currentProduct = productsDB.find(p => p.id === productId);
+                renderProduct(dolarData);
+                
+            } catch (error) {
+                console.error('Error:', error);
+                showError();
+            }
+        }
+
+        function showError() {
+            document.getElementById('loadingState').classList.add('hidden');
+            document.getElementById('errorState').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function formatPrice(amount) {
+            return Math.round(amount).toLocaleString('es-AR', {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            });
+        }
+
+        function formatUSD(amount) {
+            return amount.toLocaleString('en-US', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+        }
+
+        function renderProduct(dolarData) {
+            // Ocultar loading, mostrar contenido
+            document.getElementById('loadingState').classList.add('hidden');
+            document.getElementById('productDetail').classList.remove('hidden');
+            document.getElementById('tabsSection').classList.remove('hidden');
+            document.getElementById('relatedSection').classList.remove('hidden');
+            
+            // Mostrar indicador de estado del dólar
+            const dolarStatusEl = document.getElementById('dolarStatus');
+            const dolarStatusText = document.getElementById('dolarStatusText');
+            
+            dolarStatusEl.classList.remove('hidden', 'live', 'cached', 'offline');
+            
+            if (dolarData.source === 'live') {
+                dolarStatusEl.classList.add('live');
+                dolarStatusEl.innerHTML = `<i data-lucide="wifi" class="w-3.5 h-3.5"></i><span>Cotización en tiempo real (${dolarData.apiName})</span>`;
+            } else if (dolarData.source === 'cache') {
+                dolarStatusEl.classList.add('cached');
+                const age = Math.round((Date.now() - new Date(dolarData.timestamp).getTime()) / (1000 * 60 * 60));
+                dolarStatusEl.innerHTML = `<i data-lucide="clock" class="w-3.5 h-3.5"></i><span>Cotización de hace ${age}h (sin conexión)</span>`;
+            } else {
+                dolarStatusEl.classList.add('offline');
+                dolarStatusEl.innerHTML = `<i data-lucide="wifi-off" class="w-3.5 h-3.5"></i><span>Usando cotización local</span>`;
+            }
+
+            // Info básica
+            document.getElementById('breadcrumbName').textContent = currentProduct.name;
+            document.getElementById('productTitle').textContent = currentProduct.name;
+            document.getElementById('productDesc').textContent = currentProduct.shortDesc;
+            document.getElementById('fullDesc').textContent = currentProduct.fullDesc;
+
+            // Badge de producto
+            const badge = document.getElementById('productBadge');
+            if (currentProduct.badge) {
+                badge.textContent = currentProduct.badge;
+                badge.classList.remove('hidden');
+            }
+
+            // ===== SECCIÓN DE PRECIO =====
+            const priceUSD = currentProduct.priceUSD;
+            const discount = currentProduct.discount || 0;
+            
+            const simplePriceEl = document.getElementById('simplePrice');
+            const discountPriceEl = document.getElementById('discountPrice');
+            const noPriceEl = document.getElementById('noPrice');
+            const discountBadgeEl = document.getElementById('discountBadge');
+
+            if (priceUSD && priceUSD > 0 && dolarRate) {
+                const priceARS = priceUSD * dolarRate;
+                
+                if (discount > 0) {
+                    // Hay descuento
+                    const discountAmountUSD = priceUSD * (discount / 100);
+                    const finalPriceUSD = priceUSD - discountAmountUSD;
+                    const finalPriceARS = finalPriceUSD * dolarRate;
+                    const savingsARS = discountAmountUSD * dolarRate;
+                    
+                    // Badge en imagen
+                    discountBadgeEl.textContent = `-${discount}% OFF`;
+                    discountBadgeEl.classList.remove('hidden');
+                    
+                    // Precios
+                    document.getElementById('discountPercent').textContent = discount;
+                    document.getElementById('originalPriceUSD').textContent = formatUSD(priceUSD);
+                    document.getElementById('finalPriceUSD').textContent = formatUSD(finalPriceUSD);
+                    document.getElementById('finalPriceARS').textContent = formatPrice(finalPriceARS);
+                    document.getElementById('savingsUSD').textContent = formatUSD(discountAmountUSD);
+                    document.getElementById('savingsARS').textContent = formatPrice(savingsARS);
+                    document.getElementById('dolarRateDisplayDiscount').textContent = formatPrice(dolarRate);
+                    
+                    discountPriceEl.classList.remove('hidden');
+                    simplePriceEl.classList.add('hidden');
+                    noPriceEl.classList.add('hidden');
+                    
+                } else {
+                    // Sin descuento
+                    document.getElementById('priceUSD').textContent = formatUSD(priceUSD);
+                    document.getElementById('priceAmount').textContent = formatPrice(priceARS);
+                    document.getElementById('dolarRateDisplay').textContent = formatPrice(dolarRate);
+                    
+                    simplePriceEl.classList.remove('hidden');
+                    discountPriceEl.classList.add('hidden');
+                    noPriceEl.classList.add('hidden');
+                    discountBadgeEl.classList.add('hidden');
+                }
+            } else {
+                // Sin precio
+                noPriceEl.classList.remove('hidden');
+                simplePriceEl.classList.add('hidden');
+                discountPriceEl.classList.add('hidden');
+                discountBadgeEl.classList.add('hidden');
+            }
+
+            // Features grid
+            const featuresGrid = [
+                { icon: 'shield-check', title: 'Material', desc: currentProduct.specs.material.split('(')[0] },
+                { icon: 'clock', title: 'Tiempo', desc: '24-48 hs' },
+                { icon: 'truck', title: 'Envío', desc: 'A todo el país' },
+                { icon: 'refresh-cw', title: 'Garantía', desc: currentProduct.specs.warranty }
+            ];
+            
+            document.getElementById('featuresGrid').innerHTML = featuresGrid.map((f, i) => `
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-gray-50">
+                    <div class="feature-icon w-10 h-10 bg-brand-yellow/10 rounded-full flex items-center justify-center" style="animation-delay: ${i * 0.5}s">
+                        <i data-lucide="${f.icon}" class="w-5 h-5 text-brand-yellow"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500">${f.title}</p>
+                        <p class="text-sm font-bold">${f.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            // Features list
+            document.getElementById('featuresList').innerHTML = currentProduct.features.map(f => 
+                `<li class="flex items-start gap-2"><i data-lucide="check" class="w-5 h-5 text-brand-yellow mt-0.5 flex-shrink-0"></i><span>${f}</span></li>`
+            ).join('');
+
+            // Specs table
+            const specs = currentProduct.specs;
+            document.getElementById('specsTable').innerHTML = `
+                <tr><td class="py-3 font-medium text-gray-900 w-1/3">Material</td><td class="py-3 text-gray-600">${specs.material}</td></tr>
+                <tr><td class="py-3 font-medium text-gray-900">Dimensiones</td><td class="py-3 text-gray-600">${specs.dimensions}</td></tr>
+                <tr><td class="py-3 font-medium text-gray-900">Peso</td><td class="py-3 text-gray-600">${specs.weight}</td></tr>
+                <tr><td class="py-3 font-medium text-gray-900">Capacidad</td><td class="py-3 text-gray-600">${specs.capacity}</td></tr>
+                <tr><td class="py-3 font-medium text-gray-900">Instalación</td><td class="py-3 text-gray-600">${specs.installation}</td></tr>
+                <tr><td class="py-3 font-medium text-gray-900">Garantía</td><td class="py-3 text-gray-600">${specs.warranty}</td></tr>
+            `;
+
+            // Care instructions
+            document.getElementById('careList').innerHTML = currentProduct.care.map(c => 
+                `<li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow mt-0.5 flex-shrink-0"></i><span>${c}</span></li>`
+            ).join('');
+
+            // Gallery
+            document.getElementById('mainImage').src = currentProduct.images.main;
+            document.getElementById('galleryThumbs').innerHTML = currentProduct.images.gallery.map((img, idx) => `
+                <div class="gallery-thumb aspect-square rounded-xl overflow-hidden border-2 border-transparent ${idx === 0 ? 'active' : ''}" 
+                     onclick="changeImage(${idx})">
+                    <img src="${img}" class="object-cover w-full h-full" onerror="this.style.display='none'; this.parentElement.style.background='#f3f4f6'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-gray-400 text-xs\'>IMG ${idx+1}</div>'">
+                </div>
+            `).join('');
+
+            // Color selector
+            document.getElementById('colorSelector').innerHTML = currentProduct.colors.map(color => `
+                <div class="color-option w-10 h-10 rounded-full ${color.class} border-2 border-gray-200" 
+                     data-color="${color.name}" title="${color.name}" onclick="selectColor('${color.name}')"></div>
+            `).join('');
+
+            // Related products
+            const related = productsDB.filter(p => currentProduct.related.includes(p.id));
+            document.getElementById('relatedProducts').innerHTML = related.map(p => {
+                let relatedPriceHTML = '';
+                if (p.priceUSD && dolarRate) {
+                    const priceARS = p.priceUSD * dolarRate;
+                    const finalPrice = p.discount ? priceARS * (1 - p.discount/100) : priceARS;
+                    relatedPriceHTML = `<span class="text-brand-yellow font-bold">USD ${formatUSD(p.discount ? p.priceUSD * (1 - p.discount/100) : p.priceUSD)}</span>`;
+                    if (p.discount) {
+                        relatedPriceHTML += ` <span class="text-gray-400 line-through text-xs">USD ${formatUSD(p.priceUSD)}</span>`;
+                    }
+                } else {
+                    relatedPriceHTML = `<span class="text-gray-500">Consultar</span>`;
+                }
+                
+                return `
+                <a href="producto.html?id=${p.id}" class="group block bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 hover:border-brand-yellow transition-all">
+                    <div class="aspect-video bg-gray-100 overflow-hidden">
+                        <img src="${p.images.main}" class="object-cover w-full h-full group-hover:scale-105 transition-transform" onerror="this.style.display='none'; this.parentElement.style.background='#f3f4f6'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-gray-400\'>${p.name}</div>'">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-1">
+                            <h3 class="font-bold">${p.name}</h3>
+                            ${p.discount ? `<span class="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">-${p.discount}%</span>` : ''}
+                        </div>
+                        <p class="text-sm text-gray-600 line-clamp-2 mb-2">${p.shortDesc}</p>
+                        <p class="text-sm">${relatedPriceHTML}</p>
+                    </div>
+                </a>
+            `}).join('');
+
+            lucide.createIcons();
+        }
+
+        function changeImage(idx) {
+            currentImageIndex = idx;
+            document.getElementById('mainImage').src = currentProduct.images.gallery[idx];
+            document.querySelectorAll('.gallery-thumb').forEach((t, i) => {
+                t.classList.toggle('active', i === idx);
+            });
+        }
+
+        function selectColor(color) {
+            selectedColor = color;
+            document.getElementById('selectedColor').textContent = `(seleccionado: ${color})`;
+            document.querySelectorAll('.color-option').forEach(el => {
+                el.classList.toggle('selected', el.dataset.color === color);
+            });
+        }
+
+        function orderProduct() {
+            let mensaje = '';
+            const priceUSD = currentProduct.priceUSD;
+            const discount = currentProduct.discount || 0;
+            
+            let priceInfo = '';
+            if (priceUSD && dolarRate) {
+                const finalPriceUSD = discount > 0 ? priceUSD * (1 - discount/100) : priceUSD;
+                const finalPriceARS = finalPriceUSD * dolarRate;
+                priceInfo = ` (Precio: USD ${formatUSD(finalPriceUSD)} / ARS $${formatPrice(finalPriceARS)}`;
+                if (discount > 0) priceInfo += ` con ${discount}% descuento`;
+                priceInfo += `)`;
+            }
+            
+            const colorText = selectedColor ? ` en color ${selectedColor}` : '';
+            mensaje = `Hola! Me interesa el ${currentProduct.name}${colorText}${priceInfo}. ¿Podés darme más info sobre disponibilidad?`;
+            
+            const url = `https://wa.me/5491151181404?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        }
+
+        // Tabs
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => {
+                    b.classList.remove('active', 'border-brand-yellow', 'font-bold');
+                    b.classList.add('text-gray-500', 'border-transparent');
+                });
+                btn.classList.add('active', 'border-brand-yellow', 'font-bold');
+                btn.classList.remove('text-gray-500', 'border-transparent');
+                
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                document.getElementById(btn.dataset.tab).classList.add('active');
+            });
+        });
+
+        // Init
+        init();
+    </script>
+</body>
+</html>
