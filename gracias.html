@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias! | MAGIC TOOLS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fafafa; }
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+        .brand-yellow { color: #F5B800; }
+        .bg-brand-yellow { background-color: #F5B800; }
+        .bg-brand-black { background-color: #1a1a1a; }
+    </style>
+</head>
+<body class="text-gray-900 antialiased min-h-screen flex flex-col">
+
+    <div class="flex-1 flex items-center justify-center p-6">
+        <div class="max-w-md w-full text-center">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="check" class="w-10 h-10 text-green-600"></i>
+            </div>
+            <h1 class="text-3xl font-bold mb-4">¡Mensaje enviado!</h1>
+            <p class="text-gray-600 mb-8">Gracias por contactarnos. Te responderemos por WhatsApp o email en menos de 24 horas.</p>
+            
+            <div class="space-y-3">
+                <a href="index.html" class="block w-full bg-brand-black text-white py-3 rounded-xl font-medium hover:bg-gray-800 transition-colors">
+                    Volver al inicio
+                </a>
+                <a href="https://wa.me/5491151181404" target="_blank" class="block w-full bg-green-500 text-white py-3 rounded-xl font-medium hover:bg-green-600 transition-colors flex items-center justify-center gap-2">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    Escribir por WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
