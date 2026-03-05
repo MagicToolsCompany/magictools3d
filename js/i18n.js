@@ -1,7 +1,6 @@
 /**
  * Magic Tools Internationalization System
  * Supports: ES (default), EN, PT
- * Nota: Usa SVG de banderas porque Windows no soporta emojis de banderas
  */
 
 class I18n {
@@ -10,7 +9,23 @@ class I18n {
     this.translations = {};
     this.fallbackLang = 'es';
     this.availableLangs = ['es', 'en', 'pt'];
+    this.basePath = this.detectBasePath();
     this.init();
+  }
+
+  // Detect if we're in a subfolder (like /MagicTools3d/)
+  detectBasePath() {
+    const path = window.location.pathname;
+    // If URL contains the project name, use it as base
+    if (path.includes('/MagicTools3d/')) {
+      return '/MagicTools3d';
+    }
+    // Check if we're on Live Server with a subfolder
+    const segments = path.split('/').filter(s => s);
+    if (segments.length > 0 && !segments[0].includes('.html')) {
+      return '/' + segments[0];
+    }
+    return '';
   }
 
   async init() {
@@ -19,6 +34,8 @@ class I18n {
     const browserLang = this.getBrowserLang();
     
     this.currentLang = urlLang || storedLang || browserLang || this.fallbackLang;
+    
+    console.log('🔧 Base path detected:', this.basePath || '(root)');
     
     await this.loadTranslations(this.currentLang);
     this.applyToDOM();
@@ -44,20 +61,109 @@ class I18n {
       this.currentLang = lang;
     }
     
-    try {
-      const response = await fetch(`data/lang/${lang}.json`);
-      if (!response.ok) throw new Error(`Failed to load ${lang}`);
-      this.translations = await response.json();
-      this.currentLang = lang;
-      localStorage.setItem('magicTools_lang', lang);
-      this.updateURL(lang);
-      document.documentElement.lang = lang;
-    } catch (error) {
-      console.error('Error loading translations:', error);
-      if (lang !== this.fallbackLang) {
-        await this.loadTranslations(this.fallbackLang);
+    // Try multiple path strategies
+    const paths = [
+      `${this.basePath}/locales/${lang}.json`,
+      `locales/${lang}.json`,
+      `./locales/${lang}.json`,
+      `../locales/${lang}.json`
+    ];
+    
+    let lastError;
+    
+    for (const path of paths) {
+      try {
+        // Clean up double slashes except for protocol
+        const cleanPath = path.replace(/([^:]\/)\/+/g, "$1");
+        console.log(`📝 Trying to load: ${cleanPath}`);
+        
+        const response = await fetch(cleanPath);
+        
+        if (response.ok) {
+          this.translations = await response.json();
+          this.currentLang = lang;
+          localStorage.setItem('magicTools_lang', lang);
+          this.updateURL(lang);
+          document.documentElement.lang = lang;
+          console.log(`✅ Loaded translations from: ${cleanPath}`);
+          return;
+        } else {
+          console.warn(`⚠️ ${cleanPath} returned ${response.status}`);
+        }
+      } catch (error) {
+        console.warn(`❌ Failed to load from ${path}:`, error.message);
+        lastError = error;
       }
     }
+    
+    // If all paths failed, use fallback translations embedded in code
+    console.error('🚨 All translation paths failed, using embedded fallback');
+    this.translations = this.getFallbackTranslations(lang);
+    this.currentLang = lang;
+  }
+
+  // Emergency fallback translations if JSON files are missing
+  getFallbackTranslations(lang) {
+    const fallbacks = {
+      'es': {
+        meta: { brand: 'Magic Tools' },
+        nav: { 
+          products: 'Productos', 
+          cookieCutters: 'Cortadores',
+          howToBuy: 'Cómo Comprar',
+          customization: 'Personalización',
+          materials: 'Materiales',
+          contact: 'Contacto',
+          order: 'Pedir'
+        },
+        hero: {
+          badge: 'Impresión 3D de alta precisión',
+          title: 'Diseño funcional para tu cocina',
+          description: 'Accesorios inteligentes para Thermomix impresos en 3D. Organiza tus utensilios, optimiza tu espacio y personaliza cada detalle con tu color favorito.',
+          viewCatalog: 'Ver catálogo',
+          whatsapp: 'WhatsApp'
+        }
+      },
+      'en': {
+        meta: { brand: 'Magic Tools' },
+        nav: { 
+          products: 'Products', 
+          cookieCutters: 'Cookie Cutters',
+          howToBuy: 'How to Buy',
+          customization: 'Customization',
+          materials: 'Materials',
+          contact: 'Contact',
+          order: 'Order'
+        },
+        hero: {
+          badge: 'High precision 3D printing',
+          title: 'Functional design for your kitchen',
+          description: 'Smart accessories for Thermomix 3D printed. Organize your utensils, optimize your space and customize every detail with your favorite color.',
+          viewCatalog: 'View catalog',
+          whatsapp: 'WhatsApp'
+        }
+      },
+      'pt': {
+        meta: { brand: 'Magic Tools' },
+        nav: { 
+          products: 'Produtos', 
+          cookieCutters: 'Cortadores',
+          howToBuy: 'Como Comprar',
+          customization: 'Personalização',
+          materials: 'Materiais',
+          contact: 'Contato',
+          order: 'Pedir'
+        },
+        hero: {
+          badge: 'Impressão 3D de alta precisão',
+          title: 'Design funcional para sua cozinha',
+          description: 'Acessórios inteligentes para Thermomix impressos em 3D. Organize seus utensílios, otimize seu espaço e personalize cada detalhe com sua cor favorita.',
+          viewCatalog: 'Ver catálogo',
+          whatsapp: 'WhatsApp'
+        }
+      }
+    };
+    return fallbacks[lang] || fallbacks['es'];
   }
 
   updateURL(lang) {
@@ -156,7 +262,6 @@ class I18n {
     document.body.style.cursor = 'default';
   }
 
-  // SVG de banderas inline (funciona en todos los navegadores y sistemas)
   getFlagSVG(lang) {
     const flags = {
       'es': `<svg viewBox="0 0 640 480" class="w-full h-full object-cover">
