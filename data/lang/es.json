@@ -1,23 +1,19 @@
 {
   "meta": {
-    "language": "es",
-    "languageName": "Español",
-    "flag": "ES",
-    "direction": "ltr"
+    "brand": "Magic Tools"
   },
   "nav": {
     "products": "Productos",
-    "cookieCutters": "Cookie Cutters",
-    "howToBuy": "Comprar",
+    "cookieCutters": "Cortadores",
+    "howToBuy": "Cómo Comprar",
     "customization": "Personalización",
     "materials": "Materiales",
     "contact": "Contacto",
-    "order": "Pedir",
-    "consult": "Consultar"
+    "order": "Pedir"
   },
   "hero": {
     "badge": "Impresión 3D de alta precisión",
-    "title": "Diseño funcional<br>para tu cocina",
+    "title": "Diseño funcional para tu cocina",
     "description": "Accesorios inteligentes para Thermomix impresos en 3D. Organiza tus utensilios, optimiza tu espacio y personaliza cada detalle con tu color favorito.",
     "viewCatalog": "Ver catálogo",
     "whatsapp": "WhatsApp"
@@ -25,238 +21,113 @@
   "features": {
     "customizableColors": {
       "title": "Colores Personalizables",
-      "desc": "Amplia gama cromática disponible. Amarillo, negro, blanco y más. Elige el que combine con tu cocina."
+      "desc": "Elige entre una amplia gama de colores para combinar con tu cocina"
     },
     "premiumMaterials": {
       "title": "Materiales Premium",
-      "desc": "Fabricados exclusivamente en PETG y ABS de alta calidad para una larga vida útil y fácil limpieza."
+      "desc": "PETG y ABS de alta calidad, seguros para uso alimentario"
     },
     "customDesign": {
       "title": "Diseño a Medida",
-      "desc": "¿Tienes una idea especial? Transformamos tu concepto en una herramienta real y personalizada."
+      "desc": "¿Tienes una idea? La convertimos en realidad"
     }
   },
   "products": {
-    "title": "Catálogo de Productos",
-    "subtitle": "Soluciones inteligentes para organizar y optimizar tu Thermomix",
-    "bestseller": "MÁS VENDIDO",
-    "new": "NUEVO",
+    "title": "Nuestros Productos",
+    "subtitle": "Accesorios diseñados para facilitar tu día a día",
+    "bestseller": "Más Vendido",
+    "new": "Nuevo",
     "viewDetails": "Ver detalles",
-    "viewCatalog": "Ver catálogo",
-    "colorsAvailable": "+20 colores",
-    "cookieCuttersDesc": "Más de 50 diseños de cortadores de galletas personalizados. Animales, formas, festividades y más."
+    "viewCatalog": "Ver catálogo completo",
+    "fullCatalog": "Catálogo Completo",
+    "cookieCuttersDesc": "Diseños exclusivos para tus creaciones",
+    "colorsAvailable": "colores disponibles"
   },
   "howToBuy": {
-    "title": "¿Cómo comprar?",
+    "title": "¿Cómo Comprar?",
     "subtitle": "Simple, rápido y personalizado",
     "steps": {
-      "1": { "title": "Elige producto", "desc": "Selecciona el accesorio que necesitas de nuestro catálogo" },
-      "2": { "title": "Personaliza", "desc": "Escoge el color (amarillo, negro, blanco, etc.)" },
-      "3": { "title": "Contacta", "desc": "Escríbenos por WhatsApp o Instagram" },
-      "4": { "title": "Recibe", "desc": "Te lo enviamos o coordinamos retiro" }
+      "1": {
+        "title": "Elige tu producto",
+        "desc": "Navega por nuestro catálogo y selecciona lo que necesitas"
+      },
+      "2": {
+        "title": "Personaliza",
+        "desc": "Selecciona el color y cualquier modificación especial"
+      },
+      "3": {
+        "title": "Contáctanos",
+        "desc": "Escríbenos por WhatsApp o Instagram con tu pedido"
+      },
+      "4": {
+        "title": "Recibe en casa",
+        "desc": "Enviamos a todo el país o coordinamos retiro"
+      }
     },
-    "cta": "Escribir por WhatsApp",
-    "responseTime": "Respuesta en menos de 24hs"
+    "cta": "Hacer pedido ahora",
+    "responseTime": "Respondemos en menos de 1 hora"
   },
   "customization": {
-    "badge": "Proyectos Especiales",
-    "title": "¿Tienes una idea?",
-    "description": "Somos especialistas en diseño 3D. Transformamos tu concepto en una herramienta real, funcional y completamente personalizada para tus necesidades específicas.",
-    "features": [
-      "Diseño personalizado desde cero según tus especificaciones",
-      "Elección de colores corporativos o preferidos",
-      "Prototipado rápido y ajustes sin costo adicional"
-    ],
-    "cta": "Consultar proyecto"
+    "badge": "100% Personalizable",
+    "title": "¿Tienes una idea en mente?",
+    "description": "Diseñamos y fabricamos accesorios personalizados según tus necesidades específicas. Desde modificaciones de nuestros productos existentes hasta diseños completamente nuevos.",
+    "cta": "Consultar por diseño personalizado"
   },
   "materials": {
-    "title": "Materiales de Alta Calidad",
-    "subtitle": "Durabilidad y seguridad garantizadas en cada impresión",
+    "title": "Materiales de Calidad",
+    "subtitle": "Seguros, duraderos y aptos para alimentos",
     "petg": {
-      "title": "PETG Premium",
-      "desc": "Ideal para uso alimentario y contacto con la cocina. Resistente a impactos, fácil de limpiar y duradero.",
-      "features": [
-        "Resistente a temperaturas hasta 75°C",
-        "Apto para lavavajillas",
-        "No tóxico y seguro para alimentos"
-      ]
+      "title": "PETG",
+      "desc": "Alta resistencia, transparente, seguro para alimentos"
     },
     "abs": {
-      "title": "ABS de Alta Resistencia",
-      "desc": "Máxima durabilidad para soportes y estructuras. Acabado profesional y rigidez superior.",
-      "features": [
-        "Alta resistencia mecánica",
-        "Acabado suave al tacto (vapor smoothing)",
-        "Ideal para soportes de pared"
-      ]
+      "title": "ABS",
+      "desc": "Máxima durabilidad, resistente al calor"
     }
   },
   "contact": {
-    "title": "¿Listo para tu pedido?",
-    "description": "Contáctanos directamente por WhatsApp para una atención personalizada y rápida.",
-    "form": {
-      "title": "Envíanos un mensaje",
-      "name": "Nombre",
-      "email": "Email",
-      "product": "Producto",
-      "color": "Color preferido",
-      "message": "Mensaje",
-      "placeholder": {
-        "name": "Tu nombre",
-        "email": "tu@email.com",
-        "color": "Ej: Amarillo, Negro...",
-        "message": "¿Algún detalle especial?"
-      },
-      "selectProduct": "Selecciona...",
-      "submit": "Enviar consulta",
-      "success": {
-        "title": "¡Mensaje enviado!",
-        "desc": "Te contactaremos pronto."
-      }
-    },
+    "title": "Contacto",
+    "description": "Estamos aquí para ayudarte con tu pedido",
     "whatsapp": {
       "label": "WhatsApp",
-      "number": "+54 9 11 5118-1404",
       "response": "Respuesta inmediata"
     },
     "instagram": {
       "label": "Instagram",
-      "handle": "@magic.tools.3d",
-      "follow": "Síguenos para novedades"
+      "follow": "Síguenos"
     },
     "email": {
       "label": "Email",
-      "address": "magictoolscompany@gmail.com",
-      "desc": "Para consultas generales"
+      "desc": "Para consultas detalladas"
+    },
+    "form": {
+      "title": "Enviar mensaje",
+      "success": {
+        "title": "¡Mensaje enviado!",
+        "desc": "Te responderemos a la brevedad"
+      },
+      "name": "Nombre",
+      "placeholder": {
+        "name": "Tu nombre",
+        "email": "tu@email.com",
+        "color": "Ej: Azul, Rojo, etc.",
+        "message": "Cuéntanos qué necesitas..."
+      },
+      "email": "Email",
+      "product": "Producto de interés",
+      "selectProduct": "Selecciona un producto",
+      "customProject": "Proyecto personalizado",
+      "color": "Color preferido",
+      "message": "Mensaje",
+      "submit": "Enviar mensaje"
     }
   },
   "footer": {
-    "brand": "MAGIC TOOLS",
+    "brand": "Magic Tools",
     "slogan": "Diseño funcional para tu cocina",
-    "description": "Accesorios inteligentes para Thermomix impresos en 3D. Organiza tu cocina con estilo.",
+    "description": "Accesorios 3D impresos de alta calidad para Thermomix",
     "products": "Productos",
     "contact": "Contacto",
-    "copyright": "© 2026 Magic Tools. Todos los derechos reservados."
-  },
-  "cookieCutters": {
-    "title": "Cookie Cutters 3D",
-    "collection": "Colección 2026",
-    "subtitle": "Cortadores de galletas impresos en 3D con materiales aptos para alimentos. Diseños exclusivos para cada ocasión.",
-    "searchPlaceholder": "Buscar diseño...",
-    "sort": {
-      "name": "Ordenar: Nombre",
-      "popular": "Más populares",
-      "new": "Nuevos",
-      "priceAsc": "Precio: Menor a mayor",
-      "priceDesc": "Precio: Mayor a menor"
-    },
-    "available": "diseños disponibles",
-    "loading": "Cargando productos...",
-    "errorLoading": "Error cargando productos. Recarga la página.",
-    "downloadCatalog": "Descargar catálogo",
-    "noResults": {
-      "title": "No encontramos resultados",
-      "desc": "Intenta con otra búsqueda o categoría"
-    },
-    "bulkOrder": {
-      "title": "¿Necesitas cantidad?",
-      "desc": "Ofrecemos descuentos especiales para pedidos por mayor. Ideal para reposterías, eventos o regalos corporativos.",
-      "cta": "Consultar por mayor",
-      "viewData": "Ver datos (JSON)"
-    },
-    "order": "Pedir",
-    "getDiscount": "Aprovechar descuento",
-    "sizes": "Tamaños",
-    "dolarRate": "Dólar Blue",
-    "updated": "Actualizado",
-    "loadingRate": "Cargando cotización...",
-    "errorRate": "Error cargando cotización"
-  },
-  "productDetail": {
-    "loading": "Cargando producto...",
-    "loadingDolar": "Consultando cotización...",
-    "notFound": {
-      "title": "Producto no encontrado",
-      "desc": "El producto que buscas no existe o fue removido.",
-      "back": "Volver al inicio"
-    },
-    "badge": {
-      "bestseller": "MÁS VENDIDO",
-      "new": "NUEVO"
-    },
-    "tabs": {
-      "description": "Descripción",
-      "specs": "Especificaciones",
-      "care": "Cuidados"
-    },
-    "price": {
-      "exchangeRate": "Cotización: ${rate} por USD",
-      "noPrice": "Consultar precio",
-      "noPriceDesc": "Contactanos para cotización actualizada",
-      "youSave": "Ahorrás",
-      "limitedOffer": "¡Oferta limitada!"
-    },
-    "features": {
-      "material": "Material",
-      "time": "Tiempo",
-      "shipping": "Envío",
-      "warranty": "Garantía",
-      "timeValue": "24-48 hs",
-      "shippingValue": "A todo el país"
-    },
-    "colorSelector": "Color",
-    "selectColor": "(selecciona uno)",
-    "selectedColor": "(seleccionado: {color})",
-    "cta": "Consultar por WhatsApp",
-    "response": "Respuesta en menos de 24 horas",
-    "related": "También te puede interesar"
-  },
-  "currencies": {
-    "USD": "USD",
-    "ARS": "ARS"
-  },
-  "categories": {
-    "all": "Todos",
-    "animales": "Animales",
-    "formas": "Formas",
-    "festividades": "Festividades",
-    "letras": "Letras",
-    "numeros": "Números",
-    "personajes": "Personajes",
-    "cookies": "Cookies"
-  },
-  "common": {
-    "popular": "POPULAR",
-    "new": "NUEVO",
-    "discount": "descuento",
-    "save": "Ahorrás",
-    "from": "desde",
-    "to": "hasta",
-    "or": "o",
-    "and": "y",
-    "close": "Cerrar",
-    "open": "Abrir",
-    "search": "Buscar",
-    "filter": "Filtrar",
-    "sort": "Ordenar",
-    "apply": "Aplicar",
-    "cancel": "Cancelar",
-    "save": "Guardar",
-    "next": "Siguiente",
-    "previous": "Anterior",
-    "back": "Volver",
-    "continue": "Continuar",
-    "confirm": "Confirmar",
-    "success": "Éxito",
-    "error": "Error",
-    "warning": "Advertencia",
-    "info": "Información",
-    "loading": "Cargando...",
-    "processing": "Procesando...",
-    "sent": "Enviado",
-    "received": "Recibido",
-    "pending": "Pendiente",
-    "completed": "Completado",
-    "cancelled": "Cancelado"
+    "copyright": "© 2024 Magic Tools. Todos los derechos reservados."
   }
 }
