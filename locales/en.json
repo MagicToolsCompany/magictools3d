@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "brand": "Magic Tools"
+  },
+  "nav": {
+    "products": "Productos",
+    "cookieCutters": "Cortadores",
+    "howToBuy": "Cómo Comprar",
+    "customization": "Personalización",
+    "materials": "Materiales",
+    "contact": "Contacto",
+    "order": "Pedir"
+  },
+  "hero": {
+    "badge": "Impresión 3D de alta precisión",
+    "title": "Diseño funcional para tu cocina",
+    "description": "Accesorios inteligentes para Thermomix impresos en 3D. Organiza tus utensilios, optimiza tu espacio y personaliza cada detalle con tu color favorito.",
+    "viewCatalog": "Ver catálogo",
+    "whatsapp": "WhatsApp"
+  },
+  "features": {
+    "customizableColors": {
+      "title": "Colores Personalizables",
+      "desc": "Elige entre una amplia gama de colores para combinar con tu cocina"
+    },
+    "premiumMaterials": {
+      "title": "Materiales Premium",
+      "desc": "PETG y ABS de alta calidad, seguros para uso alimentario"
+    },
+    "customDesign": {
+      "title": "Diseño a Medida",
+      "desc": "¿Tienes una idea? La convertimos en realidad"
+    }
+  },
+  "products": {
+    "title": "Nuestros Productos",
+    "subtitle": "Accesorios diseñados para facilitar tu día a día",
+    "bestseller": "Más Vendido",
+    "new": "Nuevo",
+    "viewDetails": "Ver detalles",
+    "viewCatalog": "Ver catálogo completo",
+    "fullCatalog": "Catálogo Completo",
+    "cookieCuttersDesc": "Diseños exclusivos para tus creaciones",
+    "colorsAvailable": "colores disponibles"
+  },
+  "howToBuy": {
+    "title": "¿Cómo Comprar?",
+    "subtitle": "Simple, rápido y personalizado",
+    "steps": {
+      "1": {
+        "title": "Elige tu producto",
+        "desc": "Navega por nuestro catálogo y selecciona lo que necesitas"
+      },
+      "2": {
+        "title": "Personaliza",
+        "desc": "Selecciona el color y cualquier modificación especial"
+      },
+      "3": {
+        "title": "Contáctanos",
+        "desc": "Escríbenos por WhatsApp o Instagram con tu pedido"
+      },
+      "4": {
+        "title": "Recibe en casa",
+        "desc": "Enviamos a todo el país o coordinamos retiro"
+      }
+    },
+    "cta": "Hacer pedido ahora",
+    "responseTime": "Respondemos en menos de 1 hora"
+  },
+  "customization": {
+    "badge": "100% Personalizable",
+    "title": "¿Tienes una idea en mente?",
+    "description": "Diseñamos y fabricamos accesorios personalizados según tus necesidades específicas. Desde modificaciones de nuestros productos existentes hasta diseños completamente nuevos.",
+    "cta": "Consultar por diseño personalizado"
+  },
+  "materials": {
+    "title": "Materiales de Calidad",
+    "subtitle": "Seguros, duraderos y aptos para alimentos",
+    "petg": {
+      "title": "PETG",
+      "desc": "Alta resistencia, transparente, seguro para alimentos"
+    },
+    "abs": {
+      "title": "ABS",
+      "desc": "Máxima durabilidad, resistente al calor"
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "description": "Estamos aquí para ayudarte con tu pedido",
+    "whatsapp": {
+      "label": "WhatsApp",
+      "response": "Respuesta inmediata"
+    },
+    "instagram": {
+      "label": "Instagram",
+      "follow": "Síguenos"
+    },
+    "email": {
+      "label": "Email",
+      "desc": "Para consultas detalladas"
+    },
+    "form": {
+      "title": "Enviar mensaje",
+      "success": {
+        "title": "¡Mensaje enviado!",
+        "desc": "Te responderemos a la brevedad"
+      },
+      "name": "Nombre",
+      "placeholder": {
+        "name": "Tu nombre",
+        "email": "tu@email.com",
+        "color": "Ej: Azul, Rojo, etc.",
+        "message": "Cuéntanos qué necesitas..."
+      },
+      "email": "Email",
+      "product": "Producto de interés",
+      "selectProduct": "Selecciona un producto",
+      "customProject": "Proyecto personalizado",
+      "color": "Color preferido",
+      "message": "Mensaje",
+      "submit": "Enviar mensaje"
+    }
+  },
+  "footer": {
+    "brand": "Magic Tools",
+    "slogan": "Diseño funcional para tu cocina",
+    "description": "Accesorios 3D impresos de alta calidad para Thermomix",
+    "products": "Productos",
+    "contact": "Contacto",
+    "copyright": "© 2024 Magic Tools. Todos los derechos reservados."
+  }
+}
